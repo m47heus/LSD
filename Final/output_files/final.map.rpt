@@ -1,5 +1,5 @@
 Analysis & Synthesis report for final
-Fri Nov 01 22:16:29 2019
+Sat Nov 02 11:54:23 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,9 +13,13 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Elapsed Time Per Partition
- 10. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add1
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -41,16 +45,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Nov 01 22:16:29 2019           ;
+; Analysis & Synthesis Status        ; Successful - Sat Nov 02 11:54:23 2019           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; final                                           ;
 ; Top-level Entity Name              ; final                                           ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 0                                               ;
-;     Total combinational functions  ; 0                                               ;
-;     Dedicated logic registers      ; 0                                               ;
-; Total registers                    ; 0                                               ;
-; Total pins                         ; 54                                              ;
+; Total logic elements               ; 67                                              ;
+;     Total combinational functions  ; 67                                              ;
+;     Dedicated logic registers      ; 33                                              ;
+; Total registers                    ; 33                                              ;
+; Total pins                         ; 82                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -154,48 +158,124 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                  ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
-; final.vhd                        ; yes             ; User VHDL File  ; D:/Users/matvs/OneDrive/Documentos/GitHub/LSD/Final/final.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
+; final.vhd                        ; yes             ; User VHDL File               ; D:/Users/matvs/OneDrive/Documentos/GitHub/LSD/Final/final.vhd             ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; d:/altera/13.0sp1/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; d:/altera/13.0sp1/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; d:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; d:/altera/13.0sp1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; d:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc          ;         ;
+; db/add_sub_9ri.tdf               ; yes             ; Auto-Generated Megafunction  ; D:/Users/matvs/OneDrive/Documentos/GitHub/LSD/Final/db/add_sub_9ri.tdf    ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-;                                             ;       ;
-; Total combinational functions               ; 0     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 54    ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-+---------------------------------------------+-------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 67         ;
+;                                             ;            ;
+; Total combinational functions               ; 67         ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 16         ;
+;     -- 3 input functions                    ; 30         ;
+;     -- <=2 input functions                  ; 21         ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 36         ;
+;     -- arithmetic mode                      ; 31         ;
+;                                             ;            ;
+; Total registers                             ; 33         ;
+;     -- Dedicated logic registers            ; 33         ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 82         ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+; Maximum fan-out node                        ; MEIO_CLOCK ;
+; Maximum fan-out                             ; 33         ;
+; Total fan-out                               ; 310        ;
+; Average fan-out                             ; 1.70       ;
++---------------------------------------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |final                     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 54   ; 0            ; |final              ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
+; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Library Name ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
+; |final                             ; 67 (51)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 82   ; 0            ; |final                                             ; work         ;
+;    |lpm_add_sub:Add1|              ; 16 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final|lpm_add_sub:Add1                            ; work         ;
+;       |add_sub_9ri:auto_generated| ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final|lpm_add_sub:Add1|add_sub_9ri:auto_generated ; work         ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; DISPLAY_VECTOR[0..5]                   ; Stuck at VCC due to stuck port data_in ;
+; A1~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; B1~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; C1~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; D1~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; E1~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; F1~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; A2~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; B2~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; C2~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; D2~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; E2~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; F2~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; A3~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; B3~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; C3~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; D3~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; E3~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; F3~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; A4~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; B4~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; C4~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; D4~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; E4~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; F4~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; DISPLAY_VECTOR[6]                      ; Stuck at VCC due to stuck port data_in ;
+; G1~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; G2~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; G3~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; G4~reg0                                ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 35 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                          ;
++-------------------+---------------------------+------------------------------------------------------+
+; Register name     ; Reason for Removal        ; Registers Removed due to This Register               ;
++-------------------+---------------------------+------------------------------------------------------+
+; DISPLAY_VECTOR[3] ; Stuck at VCC              ; D1~reg0, D2~reg0, D3~reg0, D4~reg0, G2~reg0, G3~reg0 ;
+;                   ; due to stuck port data_in ;                                                      ;
+; DISPLAY_VECTOR[5] ; Stuck at VCC              ; F1~reg0, F2~reg0, F3~reg0, F4~reg0                   ;
+;                   ; due to stuck port data_in ;                                                      ;
+; DISPLAY_VECTOR[4] ; Stuck at VCC              ; E1~reg0, E2~reg0, E3~reg0, E4~reg0                   ;
+;                   ; due to stuck port data_in ;                                                      ;
+; DISPLAY_VECTOR[2] ; Stuck at VCC              ; C1~reg0, C2~reg0, C3~reg0, C4~reg0                   ;
+;                   ; due to stuck port data_in ;                                                      ;
+; DISPLAY_VECTOR[1] ; Stuck at VCC              ; B1~reg0, B2~reg0, B3~reg0, B4~reg0                   ;
+;                   ; due to stuck port data_in ;                                                      ;
+; DISPLAY_VECTOR[0] ; Stuck at VCC              ; A1~reg0, A2~reg0, A3~reg0, A4~reg0                   ;
+;                   ; due to stuck port data_in ;                                                      ;
+; DISPLAY_VECTOR[6] ; Stuck at VCC              ; G1~reg0, G4~reg0                                     ;
+;                   ; due to stuck port data_in ;                                                      ;
++-------------------+---------------------------+------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -203,14 +283,51 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 33    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 17    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 16    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |final|SALDO_CLIENTE[0]    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add1 ;
++------------------------+-------------+----------------------------+
+; Parameter Name         ; Value       ; Type                       ;
++------------------------+-------------+----------------------------+
+; LPM_WIDTH              ; 16          ; Untyped                    ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
+; LPM_DIRECTION          ; DEFAULT     ; Untyped                    ;
+; ONE_INPUT_IS_CONSTANT  ; NO          ; Untyped                    ;
+; LPM_PIPELINE           ; 0           ; Untyped                    ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                    ;
+; REGISTERED_AT_END      ; 0           ; Untyped                    ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                    ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                    ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                    ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH         ;
+; DEVICE_FAMILY          ; Cyclone II  ; Untyped                    ;
+; USE_WYS                ; OFF         ; Untyped                    ;
+; STYLE                  ; FAST        ; Untyped                    ;
+; CBXI_PARAMETER         ; add_sub_9ri ; Untyped                    ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE             ;
++------------------------+-------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------+
@@ -228,99 +345,69 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Nov 01 22:16:27 2019
+    Info: Processing started: Sat Nov 02 11:54:21 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off final -c final
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file final.vhd
     Info (12022): Found design unit 1: final-banco
     Info (12023): Found entity 1: final
 Info (12127): Elaborating entity "final" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at final.vhd(20): object "DISPLAYER" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at final.vhd(20): object "SALDO_CLIENTE" assigned a value but never read
-Warning (10492): VHDL Process Statement warning at final.vhd(38): signal "MEIO_CLOCK" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at final.vhd(35): inferring latch(es) for signal or variable "RESULT", which holds its previous value in one or more paths through the process
-Warning (10492): VHDL Process Statement warning at final.vhd(49): signal "MEIO_CLOCK" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (10041): Inferred latch for "RESULT[0]" at final.vhd(35)
-Info (10041): Inferred latch for "RESULT[1]" at final.vhd(35)
-Info (10041): Inferred latch for "RESULT[2]" at final.vhd(35)
-Info (10041): Inferred latch for "RESULT[3]" at final.vhd(35)
-Info (10041): Inferred latch for "RESULT[4]" at final.vhd(35)
-Info (10041): Inferred latch for "RESULT[5]" at final.vhd(35)
-Info (10041): Inferred latch for "RESULT[6]" at final.vhd(35)
-Info (10041): Inferred latch for "RESULT[7]" at final.vhd(35)
-Info (10041): Inferred latch for "RESULT[8]" at final.vhd(35)
-Info (10041): Inferred latch for "RESULT[9]" at final.vhd(35)
-Info (10041): Inferred latch for "RESULT[10]" at final.vhd(35)
-Info (10041): Inferred latch for "RESULT[11]" at final.vhd(35)
-Info (10041): Inferred latch for "RESULT[12]" at final.vhd(35)
-Info (10041): Inferred latch for "RESULT[13]" at final.vhd(35)
-Info (10041): Inferred latch for "RESULT[14]" at final.vhd(35)
-Info (10041): Inferred latch for "RESULT[15]" at final.vhd(35)
+Warning (10036): Verilog HDL or VHDL warning at final.vhd(24): object "DISPLAYER" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at final.vhd(26): used implicit default value for signal "DADO1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at final.vhd(26): used implicit default value for signal "DADO2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at final.vhd(26): used implicit default value for signal "DADO3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at final.vhd(26): used implicit default value for signal "DADO4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10492): VHDL Process Statement warning at final.vhd(45): signal "MEIO_CLOCK" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at final.vhd(56): signal "MEIO_CLOCK" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add1"
+Info (12130): Elaborated megafunction instantiation "lpm_add_sub:Add1"
+Info (12133): Instantiated megafunction "lpm_add_sub:Add1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTH" = "16"
+    Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_9ri.tdf
+    Info (12023): Found entity 1: add_sub_9ri
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "RESULT[0]" is stuck at GND
-    Warning (13410): Pin "RESULT[1]" is stuck at GND
-    Warning (13410): Pin "RESULT[2]" is stuck at GND
-    Warning (13410): Pin "RESULT[3]" is stuck at GND
-    Warning (13410): Pin "RESULT[4]" is stuck at GND
-    Warning (13410): Pin "RESULT[5]" is stuck at GND
-    Warning (13410): Pin "RESULT[6]" is stuck at GND
-    Warning (13410): Pin "RESULT[7]" is stuck at GND
-    Warning (13410): Pin "RESULT[8]" is stuck at GND
-    Warning (13410): Pin "RESULT[9]" is stuck at GND
-    Warning (13410): Pin "RESULT[10]" is stuck at GND
-    Warning (13410): Pin "RESULT[11]" is stuck at GND
-    Warning (13410): Pin "RESULT[12]" is stuck at GND
-    Warning (13410): Pin "RESULT[13]" is stuck at GND
-    Warning (13410): Pin "RESULT[14]" is stuck at GND
-    Warning (13410): Pin "RESULT[15]" is stuck at GND
+    Warning (13410): Pin "A1" is stuck at VCC
+    Warning (13410): Pin "B1" is stuck at VCC
+    Warning (13410): Pin "C1" is stuck at VCC
+    Warning (13410): Pin "D1" is stuck at VCC
+    Warning (13410): Pin "E1" is stuck at VCC
+    Warning (13410): Pin "F1" is stuck at VCC
+    Warning (13410): Pin "G1" is stuck at VCC
+    Warning (13410): Pin "A2" is stuck at VCC
+    Warning (13410): Pin "B2" is stuck at VCC
+    Warning (13410): Pin "C2" is stuck at VCC
+    Warning (13410): Pin "D2" is stuck at VCC
+    Warning (13410): Pin "E2" is stuck at VCC
+    Warning (13410): Pin "F2" is stuck at VCC
+    Warning (13410): Pin "G2" is stuck at VCC
+    Warning (13410): Pin "A3" is stuck at VCC
+    Warning (13410): Pin "B3" is stuck at VCC
+    Warning (13410): Pin "C3" is stuck at VCC
+    Warning (13410): Pin "D3" is stuck at VCC
+    Warning (13410): Pin "E3" is stuck at VCC
+    Warning (13410): Pin "F3" is stuck at VCC
+    Warning (13410): Pin "G3" is stuck at VCC
+    Warning (13410): Pin "A4" is stuck at VCC
+    Warning (13410): Pin "B4" is stuck at VCC
+    Warning (13410): Pin "C4" is stuck at VCC
+    Warning (13410): Pin "D4" is stuck at VCC
+    Warning (13410): Pin "E4" is stuck at VCC
+    Warning (13410): Pin "F4" is stuck at VCC
+    Warning (13410): Pin "G4" is stuck at VCC
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 38 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "ID[0]"
-    Warning (15610): No output dependent on input pin "ID[1]"
-    Warning (15610): No output dependent on input pin "ID[2]"
-    Warning (15610): No output dependent on input pin "VALOR[0]"
-    Warning (15610): No output dependent on input pin "VALOR[1]"
-    Warning (15610): No output dependent on input pin "VALOR[2]"
-    Warning (15610): No output dependent on input pin "VALOR[3]"
-    Warning (15610): No output dependent on input pin "VALOR[4]"
-    Warning (15610): No output dependent on input pin "VALOR[5]"
-    Warning (15610): No output dependent on input pin "VALOR[6]"
-    Warning (15610): No output dependent on input pin "VALOR[7]"
-    Warning (15610): No output dependent on input pin "VALOR[8]"
-    Warning (15610): No output dependent on input pin "VALOR[9]"
-    Warning (15610): No output dependent on input pin "VALOR[10]"
-    Warning (15610): No output dependent on input pin "VALOR[11]"
-    Warning (15610): No output dependent on input pin "VALOR[12]"
-    Warning (15610): No output dependent on input pin "VALOR[13]"
-    Warning (15610): No output dependent on input pin "VALOR[14]"
-    Warning (15610): No output dependent on input pin "VALOR[15]"
-    Warning (15610): No output dependent on input pin "OP_CODE"
-    Warning (15610): No output dependent on input pin "CLOCK"
-    Warning (15610): No output dependent on input pin "RESET"
-    Warning (15610): No output dependent on input pin "SALDO[0]"
-    Warning (15610): No output dependent on input pin "SALDO[1]"
-    Warning (15610): No output dependent on input pin "SALDO[2]"
-    Warning (15610): No output dependent on input pin "SALDO[3]"
-    Warning (15610): No output dependent on input pin "SALDO[4]"
-    Warning (15610): No output dependent on input pin "SALDO[5]"
-    Warning (15610): No output dependent on input pin "SALDO[6]"
-    Warning (15610): No output dependent on input pin "SALDO[7]"
-    Warning (15610): No output dependent on input pin "SALDO[8]"
-    Warning (15610): No output dependent on input pin "SALDO[9]"
-    Warning (15610): No output dependent on input pin "SALDO[10]"
-    Warning (15610): No output dependent on input pin "SALDO[11]"
-    Warning (15610): No output dependent on input pin "SALDO[12]"
-    Warning (15610): No output dependent on input pin "SALDO[13]"
-    Warning (15610): No output dependent on input pin "SALDO[14]"
-    Warning (15610): No output dependent on input pin "SALDO[15]"
-Info (21057): Implemented 54 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 149 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 38 input pins
-    Info (21059): Implemented 16 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 62 warnings
-    Info: Peak virtual memory: 4657 megabytes
-    Info: Processing ended: Fri Nov 01 22:16:29 2019
+    Info (21059): Implemented 44 output pins
+    Info (21061): Implemented 67 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 37 warnings
+    Info: Peak virtual memory: 4669 megabytes
+    Info: Processing ended: Sat Nov 02 11:54:23 2019
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 
