@@ -3,19 +3,19 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'MEIO_CLOCK'
-Slack : 0.114
-TNS   : 0.000
+Slack : -3.327
+TNS   : -275.617
 
 Type  : Slow Model Setup 'CLOCK'
-Slack : 1.996
+Slack : 3.626
 TNS   : 0.000
 
 Type  : Slow Model Hold 'CLOCK'
-Slack : -1.726
-TNS   : -1.726
+Slack : -3.356
+TNS   : -3.356
 
 Type  : Slow Model Hold 'MEIO_CLOCK'
-Slack : 0.517
+Slack : 0.516
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'CLOCK'
@@ -24,22 +24,22 @@ TNS   : -2.380
 
 Type  : Slow Model Minimum Pulse Width 'MEIO_CLOCK'
 Slack : -0.500
-TNS   : -32.000
+TNS   : -221.000
 
 Type  : Fast Model Setup 'MEIO_CLOCK'
-Slack : 0.558
-TNS   : 0.000
+Slack : -1.021
+TNS   : -62.036
 
 Type  : Fast Model Setup 'CLOCK'
-Slack : 1.353
+Slack : 2.217
 TNS   : 0.000
 
 Type  : Fast Model Hold 'CLOCK'
-Slack : -0.973
-TNS   : -0.973
+Slack : -1.837
+TNS   : -1.837
 
 Type  : Fast Model Hold 'MEIO_CLOCK'
-Slack : 0.237
+Slack : 0.236
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'CLOCK'
@@ -48,6 +48,6 @@ TNS   : -2.380
 
 Type  : Fast Model Minimum Pulse Width 'MEIO_CLOCK'
 Slack : -0.500
-TNS   : -32.000
+TNS   : -221.000
 
 ------------------------------------------------------------
