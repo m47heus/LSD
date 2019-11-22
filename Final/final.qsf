@@ -68,4 +68,26 @@ set_location_assignment PIN_V14 -to F1
 set_location_assignment PIN_AA23 -to F2
 set_location_assignment PIN_V13 -to G1
 set_location_assignment PIN_AB24 -to G2
+set_location_assignment PIN_G26 -to ENABLE
+set_location_assignment PIN_N25 -to OP_CODE
+set_location_assignment PIN_W26 -to RESET
+set_location_assignment PIN_AE22 -to RESULT[7]
+set_location_assignment PIN_AF22 -to RESULT[6]
+set_location_assignment PIN_W19 -to RESULT[5]
+set_location_assignment PIN_V18 -to RESULT[4]
+set_location_assignment PIN_U18 -to RESULT[3]
+set_location_assignment PIN_U17 -to RESULT[2]
+set_location_assignment PIN_AA20 -to RESULT[1]
+set_location_assignment PIN_Y18 -to RESULT[0]
+set_location_assignment PIN_N1 -to VALOR[7]
+set_location_assignment PIN_P1 -to VALOR[6]
+set_location_assignment PIN_P2 -to VALOR[5]
+set_location_assignment PIN_T7 -to VALOR[4]
+set_location_assignment PIN_U3 -to VALOR[3]
+set_location_assignment PIN_U4 -to VALOR[2]
+set_location_assignment PIN_V1 -to VALOR[1]
+set_location_assignment PIN_V2 -to VALOR[0]
+set_location_assignment PIN_P25 -to ID[2]
+set_location_assignment PIN_AE14 -to ID[1]
+set_location_assignment PIN_AF14 -to ID[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

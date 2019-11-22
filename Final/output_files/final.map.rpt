@@ -1,5 +1,5 @@
 Analysis & Synthesis report for final
-Fri Nov 08 16:25:53 2019
+Fri Nov 22 18:30:00 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,12 +13,13 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. State Machine - |final|ESTADO_ATUAL
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +45,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Nov 08 16:25:52 2019           ;
+; Analysis & Synthesis Status        ; Successful - Fri Nov 22 18:30:00 2019           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; final                                           ;
 ; Top-level Entity Name              ; final                                           ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 287                                             ;
-;     Total combinational functions  ; 153                                             ;
-;     Dedicated logic registers      ; 222                                             ;
-; Total registers                    ; 222                                             ;
-; Total pins                         ; 37                                              ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 29                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -166,34 +167,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary              ;
-+---------------------------------------------+------------+
-; Resource                                    ; Usage      ;
-+---------------------------------------------+------------+
-; Estimated Total logic elements              ; 287        ;
-;                                             ;            ;
-; Total combinational functions               ; 153        ;
-; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 60         ;
-;     -- 3 input functions                    ; 87         ;
-;     -- <=2 input functions                  ; 6          ;
-;                                             ;            ;
-; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 132        ;
-;     -- arithmetic mode                      ; 21         ;
-;                                             ;            ;
-; Total registers                             ; 222        ;
-;     -- Dedicated logic registers            ; 222        ;
-;     -- I/O registers                        ; 0          ;
-;                                             ;            ;
-; I/O pins                                    ; 37         ;
-; Embedded Multiplier 9-bit elements          ; 0          ;
-; Maximum fan-out node                        ; MEIO_CLOCK ;
-; Maximum fan-out                             ; 222        ;
-; Total fan-out                               ; 1163       ;
-; Average fan-out                             ; 2.82       ;
-+---------------------------------------------+------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 29    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
++---------------------------------------------+-------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -201,40 +197,47 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |final                     ; 153 (153)         ; 222 (222)    ; 0           ; 0            ; 0       ; 0         ; 37   ; 0            ; |final              ; work         ;
+; |final                     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 29   ; 0            ; |final              ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; RESULT[1]~reg0                         ; Merged with RESULT[0]~reg0             ;
-; RESULT[2]~reg0                         ; Merged with RESULT[0]~reg0             ;
-; RESULT[3]~reg0                         ; Merged with RESULT[0]~reg0             ;
-; RESULT[4]~reg0                         ; Merged with RESULT[0]~reg0             ;
-; RESULT[5]~reg0                         ; Merged with RESULT[0]~reg0             ;
-; RESULT[6]~reg0                         ; Merged with RESULT[0]~reg0             ;
-; RESULT[7]~reg0                         ; Merged with RESULT[0]~reg0             ;
-; FREE_STATE1[1..7]                      ; Merged with FREE_STATE1[0]             ;
-; FREE_STATE2[1..7]                      ; Merged with FREE_STATE2[0]             ;
-; FREE_STATE2[0]                         ; Stuck at GND due to stuck port data_in ;
-; FREE_STATE1[0]                         ; Stuck at GND due to stuck port data_in ;
-; RESULT[0]~reg0                         ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 24 ;                                        ;
-+----------------------------------------+----------------------------------------+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------+
+; State Machine - |final|ESTADO_ATUAL                                                                         ;
++------------------+-----------------+------------------+------------------+-----------------+----------------+
+; Name             ; ESTADO_ATUAL.DI ; ESTADO_ATUAL.OPC ; ESTADO_ATUAL.OPD ; ESTADO_ATUAL.FU ; ESTADO_ATUAL.S ;
++------------------+-----------------+------------------+------------------+-----------------+----------------+
+; ESTADO_ATUAL.S   ; 0               ; 0                ; 0                ; 0               ; 0              ;
+; ESTADO_ATUAL.FU  ; 0               ; 0                ; 0                ; 1               ; 1              ;
+; ESTADO_ATUAL.OPD ; 0               ; 0                ; 1                ; 0               ; 1              ;
+; ESTADO_ATUAL.OPC ; 0               ; 1                ; 0                ; 0               ; 1              ;
+; ESTADO_ATUAL.DI  ; 1               ; 0                ; 0                ; 0               ; 1              ;
++------------------+-----------------+------------------+------------------+-----------------+----------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                         ;
-+----------------+---------------------------+----------------------------------------+
-; Register name  ; Reason for Removal        ; Registers Removed due to This Register ;
-+----------------+---------------------------+----------------------------------------+
-; FREE_STATE2[0] ; Stuck at GND              ; RESULT[0]~reg0                         ;
-;                ; due to stuck port data_in ;                                        ;
-+----------------+---------------------------+----------------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; ESTADO_ATUAL.FU                       ; Stuck at GND due to stuck port data_in ;
+; ESTADO_ATUAL.DI                       ; Lost fanout                            ;
+; ESTADO_ATUAL.OPD                      ; Lost fanout                            ;
+; ESTADO_ATUAL.OPC                      ; Lost fanout                            ;
+; ESTADO_ATUAL.S                        ; Lost fanout                            ;
+; Total Number of Removed Registers = 5 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                       ;
++-----------------+---------------------------+---------------------------------------------------------------------+
+; Register name   ; Reason for Removal        ; Registers Removed due to This Register                              ;
++-----------------+---------------------------+---------------------------------------------------------------------+
+; ESTADO_ATUAL.FU ; Stuck at GND              ; ESTADO_ATUAL.DI, ESTADO_ATUAL.OPD, ESTADO_ATUAL.OPC, ESTADO_ATUAL.S ;
+;                 ; due to stuck port data_in ;                                                                     ;
++-----------------+---------------------------+---------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -242,12 +245,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 222   ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 1     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 192   ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -257,14 +260,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |final|S1[6]               ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |final|S2[7]               ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |final|S3[7]               ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |final|S4[6]               ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |final|S5[0]               ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |final|S6[4]               ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |final|S7[4]               ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; Yes        ; |final|SALDO_CLIENTE[7]    ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |final|Mux0                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -283,32 +279,224 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Nov 08 16:25:49 2019
+    Info: Processing started: Fri Nov 22 18:29:58 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off final -c final
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file final.vhd
     Info (12022): Found design unit 1: final-banco
     Info (12023): Found entity 1: final
 Info (12127): Elaborating entity "final" for the top level hierarchy
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "SALDO_CLIENTE", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "RESULT_SUM", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "PROXIMO_ESTADO", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "RESULT_SUB", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "S1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "S2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "S3", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "S4", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "S5", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "S6", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "S7", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "DADO1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "DADO2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "DISPLAY_VECTOR", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "A1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "B1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "C1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "D1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "E1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "F1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "G1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "A2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "B2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "C2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "D2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "E2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "F2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "G2", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "G2" at final.vhd(46)
+Info (10041): Inferred latch for "F2" at final.vhd(46)
+Info (10041): Inferred latch for "E2" at final.vhd(46)
+Info (10041): Inferred latch for "D2" at final.vhd(46)
+Info (10041): Inferred latch for "C2" at final.vhd(46)
+Info (10041): Inferred latch for "B2" at final.vhd(46)
+Info (10041): Inferred latch for "A2" at final.vhd(46)
+Info (10041): Inferred latch for "G1" at final.vhd(46)
+Info (10041): Inferred latch for "F1" at final.vhd(46)
+Info (10041): Inferred latch for "E1" at final.vhd(46)
+Info (10041): Inferred latch for "D1" at final.vhd(46)
+Info (10041): Inferred latch for "C1" at final.vhd(46)
+Info (10041): Inferred latch for "B1" at final.vhd(46)
+Info (10041): Inferred latch for "A1" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR[0]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR[1]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR[2]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR[3]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR[4]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR[5]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR[6]" at final.vhd(46)
+Info (10041): Inferred latch for "DADO2[0]" at final.vhd(46)
+Info (10041): Inferred latch for "DADO2[1]" at final.vhd(46)
+Info (10041): Inferred latch for "DADO2[2]" at final.vhd(46)
+Info (10041): Inferred latch for "DADO2[3]" at final.vhd(46)
+Info (10041): Inferred latch for "S7[0]" at final.vhd(46)
+Info (10041): Inferred latch for "S7[1]" at final.vhd(46)
+Info (10041): Inferred latch for "S7[2]" at final.vhd(46)
+Info (10041): Inferred latch for "S7[3]" at final.vhd(46)
+Info (10041): Inferred latch for "S7[4]" at final.vhd(46)
+Info (10041): Inferred latch for "S7[5]" at final.vhd(46)
+Info (10041): Inferred latch for "S7[6]" at final.vhd(46)
+Info (10041): Inferred latch for "S7[7]" at final.vhd(46)
+Info (10041): Inferred latch for "S6[0]" at final.vhd(46)
+Info (10041): Inferred latch for "S6[1]" at final.vhd(46)
+Info (10041): Inferred latch for "S6[2]" at final.vhd(46)
+Info (10041): Inferred latch for "S6[3]" at final.vhd(46)
+Info (10041): Inferred latch for "S6[4]" at final.vhd(46)
+Info (10041): Inferred latch for "S6[5]" at final.vhd(46)
+Info (10041): Inferred latch for "S6[6]" at final.vhd(46)
+Info (10041): Inferred latch for "S6[7]" at final.vhd(46)
+Info (10041): Inferred latch for "S5[0]" at final.vhd(46)
+Info (10041): Inferred latch for "S5[1]" at final.vhd(46)
+Info (10041): Inferred latch for "S5[2]" at final.vhd(46)
+Info (10041): Inferred latch for "S5[3]" at final.vhd(46)
+Info (10041): Inferred latch for "S5[4]" at final.vhd(46)
+Info (10041): Inferred latch for "S5[5]" at final.vhd(46)
+Info (10041): Inferred latch for "S5[6]" at final.vhd(46)
+Info (10041): Inferred latch for "S5[7]" at final.vhd(46)
+Info (10041): Inferred latch for "S4[0]" at final.vhd(46)
+Info (10041): Inferred latch for "S4[1]" at final.vhd(46)
+Info (10041): Inferred latch for "S4[2]" at final.vhd(46)
+Info (10041): Inferred latch for "S4[3]" at final.vhd(46)
+Info (10041): Inferred latch for "S4[4]" at final.vhd(46)
+Info (10041): Inferred latch for "S4[5]" at final.vhd(46)
+Info (10041): Inferred latch for "S4[6]" at final.vhd(46)
+Info (10041): Inferred latch for "S4[7]" at final.vhd(46)
+Info (10041): Inferred latch for "S3[0]" at final.vhd(46)
+Info (10041): Inferred latch for "S3[1]" at final.vhd(46)
+Info (10041): Inferred latch for "S3[2]" at final.vhd(46)
+Info (10041): Inferred latch for "S3[3]" at final.vhd(46)
+Info (10041): Inferred latch for "S3[4]" at final.vhd(46)
+Info (10041): Inferred latch for "S3[5]" at final.vhd(46)
+Info (10041): Inferred latch for "S3[6]" at final.vhd(46)
+Info (10041): Inferred latch for "S3[7]" at final.vhd(46)
+Info (10041): Inferred latch for "S2[0]" at final.vhd(46)
+Info (10041): Inferred latch for "S2[1]" at final.vhd(46)
+Info (10041): Inferred latch for "S2[2]" at final.vhd(46)
+Info (10041): Inferred latch for "S2[3]" at final.vhd(46)
+Info (10041): Inferred latch for "S2[4]" at final.vhd(46)
+Info (10041): Inferred latch for "S2[5]" at final.vhd(46)
+Info (10041): Inferred latch for "S2[6]" at final.vhd(46)
+Info (10041): Inferred latch for "S2[7]" at final.vhd(46)
+Info (10041): Inferred latch for "S1[0]" at final.vhd(46)
+Info (10041): Inferred latch for "S1[1]" at final.vhd(46)
+Info (10041): Inferred latch for "S1[2]" at final.vhd(46)
+Info (10041): Inferred latch for "S1[3]" at final.vhd(46)
+Info (10041): Inferred latch for "S1[4]" at final.vhd(46)
+Info (10041): Inferred latch for "S1[5]" at final.vhd(46)
+Info (10041): Inferred latch for "S1[6]" at final.vhd(46)
+Info (10041): Inferred latch for "S1[7]" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUB[0]" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUB[1]" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUB[2]" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUB[3]" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUB[4]" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUB[5]" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUB[6]" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUB[7]" at final.vhd(46)
+Info (10041): Inferred latch for "PROXIMO_ESTADO.DI" at final.vhd(46)
+Info (10041): Inferred latch for "PROXIMO_ESTADO.OPC" at final.vhd(46)
+Info (10041): Inferred latch for "PROXIMO_ESTADO.OPD" at final.vhd(46)
+Info (10041): Inferred latch for "PROXIMO_ESTADO.FU" at final.vhd(46)
+Info (10041): Inferred latch for "PROXIMO_ESTADO.S" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUM[0]" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUM[1]" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUM[2]" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUM[3]" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUM[4]" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUM[5]" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUM[6]" at final.vhd(46)
+Info (10041): Inferred latch for "RESULT_SUM[7]" at final.vhd(46)
+Info (10041): Inferred latch for "SALDO_CLIENTE[0]" at final.vhd(46)
+Info (10041): Inferred latch for "SALDO_CLIENTE[1]" at final.vhd(46)
+Info (10041): Inferred latch for "SALDO_CLIENTE[2]" at final.vhd(46)
+Info (10041): Inferred latch for "SALDO_CLIENTE[3]" at final.vhd(46)
+Info (10041): Inferred latch for "SALDO_CLIENTE[4]" at final.vhd(46)
+Info (10041): Inferred latch for "SALDO_CLIENTE[5]" at final.vhd(46)
+Info (10041): Inferred latch for "SALDO_CLIENTE[6]" at final.vhd(46)
+Info (10041): Inferred latch for "SALDO_CLIENTE[7]" at final.vhd(46)
+Warning (14025): LATCH primitive "RESULT_SUM[3]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[3]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUM[2]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[2]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUM[1]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[1]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUM[0]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[0]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUM[7]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[7]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUM[6]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[6]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUM[5]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[5]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUM[4]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[4]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUM[3]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[3]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUM[2]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[2]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUM[1]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[1]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUM[0]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[0]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUM[7]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[7]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUM[6]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[6]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUM[5]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[5]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUM[4]" is permanently disabled
+Warning (14025): LATCH primitive "RESULT_SUB[4]" is permanently disabled
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "RESULT[0]" is stuck at GND
-    Warning (13410): Pin "RESULT[1]" is stuck at GND
-    Warning (13410): Pin "RESULT[2]" is stuck at GND
-    Warning (13410): Pin "RESULT[3]" is stuck at GND
-    Warning (13410): Pin "RESULT[4]" is stuck at GND
-    Warning (13410): Pin "RESULT[5]" is stuck at GND
-    Warning (13410): Pin "RESULT[6]" is stuck at GND
-    Warning (13410): Pin "RESULT[7]" is stuck at GND
+    Warning (13410): Pin "A1" is stuck at VCC
+    Warning (13410): Pin "B1" is stuck at GND
+    Warning (13410): Pin "C1" is stuck at GND
+    Warning (13410): Pin "D1" is stuck at GND
+    Warning (13410): Pin "E1" is stuck at GND
+    Warning (13410): Pin "F1" is stuck at GND
+    Warning (13410): Pin "G1" is stuck at GND
+    Warning (13410): Pin "A2" is stuck at VCC
+    Warning (13410): Pin "B2" is stuck at GND
+    Warning (13410): Pin "C2" is stuck at GND
+    Warning (13410): Pin "D2" is stuck at GND
+    Warning (13410): Pin "E2" is stuck at GND
+    Warning (13410): Pin "F2" is stuck at GND
+    Warning (13410): Pin "G2" is stuck at GND
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 324 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 15 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "VALOR[7]"
+    Warning (15610): No output dependent on input pin "VALOR[6]"
+    Warning (15610): No output dependent on input pin "VALOR[5]"
+    Warning (15610): No output dependent on input pin "VALOR[4]"
+    Warning (15610): No output dependent on input pin "VALOR[3]"
+    Warning (15610): No output dependent on input pin "VALOR[2]"
+    Warning (15610): No output dependent on input pin "VALOR[1]"
+    Warning (15610): No output dependent on input pin "VALOR[0]"
+    Warning (15610): No output dependent on input pin "ENABLE"
+    Warning (15610): No output dependent on input pin "CLOCK"
+    Warning (15610): No output dependent on input pin "RESET"
+    Warning (15610): No output dependent on input pin "ID[1]"
+    Warning (15610): No output dependent on input pin "ID[2]"
+    Warning (15610): No output dependent on input pin "ID[0]"
+    Warning (15610): No output dependent on input pin "OP_CODE"
+Info (21057): Implemented 29 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 22 output pins
-    Info (21061): Implemented 287 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 4663 megabytes
-    Info: Processing ended: Fri Nov 08 16:25:53 2019
-    Info: Elapsed time: 00:00:04
+    Info (21059): Implemented 14 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 92 warnings
+    Info: Peak virtual memory: 4657 megabytes
+    Info: Processing ended: Fri Nov 22 18:30:00 2019
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

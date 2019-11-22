@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for final
-Fri Nov 08 16:26:08 2019
+Fri Nov 22 20:31:37 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -16,42 +16,19 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   8. Slow Model Recovery Summary
   9. Slow Model Removal Summary
  10. Slow Model Minimum Pulse Width Summary
- 11. Slow Model Setup: 'MEIO_CLOCK'
- 12. Slow Model Setup: 'CLOCK'
- 13. Slow Model Hold: 'CLOCK'
- 14. Slow Model Hold: 'MEIO_CLOCK'
- 15. Slow Model Minimum Pulse Width: 'CLOCK'
- 16. Slow Model Minimum Pulse Width: 'MEIO_CLOCK'
- 17. Setup Times
- 18. Hold Times
- 19. Clock to Output Times
- 20. Minimum Clock to Output Times
- 21. Fast Model Setup Summary
- 22. Fast Model Hold Summary
- 23. Fast Model Recovery Summary
- 24. Fast Model Removal Summary
- 25. Fast Model Minimum Pulse Width Summary
- 26. Fast Model Setup: 'MEIO_CLOCK'
- 27. Fast Model Setup: 'CLOCK'
- 28. Fast Model Hold: 'CLOCK'
- 29. Fast Model Hold: 'MEIO_CLOCK'
- 30. Fast Model Minimum Pulse Width: 'CLOCK'
- 31. Fast Model Minimum Pulse Width: 'MEIO_CLOCK'
- 32. Setup Times
- 33. Hold Times
- 34. Clock to Output Times
- 35. Minimum Clock to Output Times
- 36. Multicorner Timing Analysis Summary
- 37. Setup Times
- 38. Hold Times
- 39. Clock to Output Times
- 40. Minimum Clock to Output Times
- 41. Setup Transfers
- 42. Hold Transfers
- 43. Report TCCS
- 44. Report RSKM
- 45. Unconstrained Paths
- 46. TimeQuest Timing Analyzer Messages
+ 11. Slow Model Datasheet Report
+ 12. Fast Model Setup Summary
+ 13. Fast Model Hold Summary
+ 14. Fast Model Recovery Summary
+ 15. Fast Model Removal Summary
+ 16. Fast Model Minimum Pulse Width Summary
+ 17. Fast Model Datasheet Report
+ 18. Multicorner Timing Analysis Summary
+ 19. Clock Transfers
+ 20. Report TCCS
+ 21. Report RSKM
+ 22. Unconstrained Paths
+ 23. TimeQuest Timing Analyzer Messages
 
 
 
@@ -98,44 +75,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clocks                                                                                                                                                                                 ;
-+------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------+
-; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets        ;
-+------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------+
-; CLOCK      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK }      ;
-; MEIO_CLOCK ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { MEIO_CLOCK } ;
-+------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------+
+----------
+; Clocks ;
+----------
+No clocks to report.
 
 
-+--------------------------------------------------+
-; Slow Model Fmax Summary                          ;
-+------------+-----------------+------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
-+------------+-----------------+------------+------+
-; 231.11 MHz ; 231.11 MHz      ; MEIO_CLOCK ;      ;
-+------------+-----------------+------------+------+
-This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+---------------------------
+; Slow Model Fmax Summary ;
+---------------------------
+No paths to report.
 
 
-+-------------------------------------+
-; Slow Model Setup Summary            ;
-+------------+--------+---------------+
-; Clock      ; Slack  ; End Point TNS ;
-+------------+--------+---------------+
-; MEIO_CLOCK ; -3.327 ; -275.617      ;
-; CLOCK      ; 3.626  ; 0.000         ;
-+------------+--------+---------------+
+----------------------------
+; Slow Model Setup Summary ;
+----------------------------
+No paths to report.
 
 
-+-------------------------------------+
-; Slow Model Hold Summary             ;
-+------------+--------+---------------+
-; Clock      ; Slack  ; End Point TNS ;
-+------------+--------+---------------+
-; CLOCK      ; -3.356 ; -3.356        ;
-; MEIO_CLOCK ; 0.516  ; 0.000         ;
-+------------+--------+---------------+
+---------------------------
+; Slow Model Hold Summary ;
+---------------------------
+No paths to report.
 
 
 -------------------------------
@@ -150,485 +111,28 @@ No paths to report.
 No paths to report.
 
 
-+----------------------------------------+
+------------------------------------------
 ; Slow Model Minimum Pulse Width Summary ;
-+------------+--------+------------------+
-; Clock      ; Slack  ; End Point TNS    ;
-+------------+--------+------------------+
-; CLOCK      ; -1.380 ; -2.380           ;
-; MEIO_CLOCK ; -0.500 ; -221.000         ;
-+------------+--------+------------------+
+------------------------------------------
+No paths to report.
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Slow Model Setup: 'MEIO_CLOCK'                                                                            ;
-+--------+------------------+---------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node        ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+------------------+---------+--------------+-------------+--------------+------------+------------+
-; -3.327 ; SALDO_CLIENTE[0] ; S4S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.011     ; 4.352      ;
-; -3.327 ; SALDO_CLIENTE[0] ; S4S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.011     ; 4.352      ;
-; -3.221 ; SALDO_CLIENTE[0] ; S1S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.003      ; 4.260      ;
-; -3.221 ; SALDO_CLIENTE[0] ; S1S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.003      ; 4.260      ;
-; -3.221 ; SALDO_CLIENTE[0] ; S1S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.003      ; 4.260      ;
-; -3.205 ; SALDO_CLIENTE[2] ; S4S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.011     ; 4.230      ;
-; -3.205 ; SALDO_CLIENTE[2] ; S4S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.011     ; 4.230      ;
-; -3.204 ; SALDO_CLIENTE[0] ; S6S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.247      ;
-; -3.204 ; SALDO_CLIENTE[0] ; S6S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.247      ;
-; -3.204 ; SALDO_CLIENTE[0] ; S6S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.247      ;
-; -3.204 ; SALDO_CLIENTE[0] ; S6S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.247      ;
-; -3.204 ; SALDO_CLIENTE[0] ; S6S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.247      ;
-; -3.204 ; SALDO_CLIENTE[0] ; S6S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.247      ;
-; -3.204 ; SALDO_CLIENTE[0] ; S6S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.247      ;
-; -3.204 ; SALDO_CLIENTE[0] ; S6S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.247      ;
-; -3.196 ; SALDO_CLIENTE[0] ; S1S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.006      ; 4.238      ;
-; -3.196 ; SALDO_CLIENTE[0] ; S1S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.006      ; 4.238      ;
-; -3.196 ; SALDO_CLIENTE[0] ; S1S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.006      ; 4.238      ;
-; -3.196 ; SALDO_CLIENTE[0] ; S1S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.006      ; 4.238      ;
-; -3.196 ; SALDO_CLIENTE[0] ; S1S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.006      ; 4.238      ;
-; -3.189 ; SALDO_CLIENTE[0] ; S7S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.004      ; 4.229      ;
-; -3.189 ; SALDO_CLIENTE[0] ; S7S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.004      ; 4.229      ;
-; -3.189 ; SALDO_CLIENTE[0] ; S7S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.004      ; 4.229      ;
-; -3.151 ; SALDO_CLIENTE[0] ; S3S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.186      ;
-; -3.151 ; SALDO_CLIENTE[0] ; S4S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.188      ;
-; -3.151 ; SALDO_CLIENTE[0] ; S3S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.186      ;
-; -3.151 ; SALDO_CLIENTE[0] ; S4S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.188      ;
-; -3.151 ; SALDO_CLIENTE[0] ; S3S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.186      ;
-; -3.151 ; SALDO_CLIENTE[0] ; S4S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.188      ;
-; -3.151 ; SALDO_CLIENTE[0] ; S3S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.186      ;
-; -3.151 ; SALDO_CLIENTE[0] ; S4S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.188      ;
-; -3.151 ; SALDO_CLIENTE[0] ; S3S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.186      ;
-; -3.151 ; SALDO_CLIENTE[0] ; S4S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.188      ;
-; -3.151 ; SALDO_CLIENTE[0] ; S3S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.186      ;
-; -3.151 ; SALDO_CLIENTE[0] ; S3S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.186      ;
-; -3.151 ; SALDO_CLIENTE[0] ; S4S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.188      ;
-; -3.151 ; SALDO_CLIENTE[0] ; S3S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.186      ;
-; -3.147 ; SALDO_CLIENTE[0] ; S2S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.184      ;
-; -3.147 ; SALDO_CLIENTE[0] ; S2S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.184      ;
-; -3.147 ; SALDO_CLIENTE[0] ; S2S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.184      ;
-; -3.147 ; SALDO_CLIENTE[0] ; S2S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.184      ;
-; -3.147 ; SALDO_CLIENTE[0] ; S2S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.184      ;
-; -3.147 ; SALDO_CLIENTE[0] ; S2S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.184      ;
-; -3.147 ; SALDO_CLIENTE[0] ; S2S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.184      ;
-; -3.147 ; SALDO_CLIENTE[0] ; S2S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.184      ;
-; -3.130 ; SALDO_CLIENTE[0] ; S5S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.165      ;
-; -3.130 ; SALDO_CLIENTE[0] ; S5S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.165      ;
-; -3.130 ; SALDO_CLIENTE[0] ; S5S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.165      ;
-; -3.130 ; SALDO_CLIENTE[0] ; S5S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.165      ;
-; -3.099 ; SALDO_CLIENTE[2] ; S1S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.003      ; 4.138      ;
-; -3.099 ; SALDO_CLIENTE[2] ; S1S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.003      ; 4.138      ;
-; -3.099 ; SALDO_CLIENTE[2] ; S1S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.003      ; 4.138      ;
-; -3.088 ; SALDO_CLIENTE[1] ; S4S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.012     ; 4.112      ;
-; -3.088 ; SALDO_CLIENTE[1] ; S4S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.012     ; 4.112      ;
-; -3.082 ; SALDO_CLIENTE[2] ; S6S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.125      ;
-; -3.082 ; SALDO_CLIENTE[2] ; S6S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.125      ;
-; -3.082 ; SALDO_CLIENTE[2] ; S6S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.125      ;
-; -3.082 ; SALDO_CLIENTE[2] ; S6S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.125      ;
-; -3.082 ; SALDO_CLIENTE[2] ; S6S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.125      ;
-; -3.082 ; SALDO_CLIENTE[2] ; S6S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.125      ;
-; -3.082 ; SALDO_CLIENTE[2] ; S6S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.125      ;
-; -3.082 ; SALDO_CLIENTE[2] ; S6S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 4.125      ;
-; -3.074 ; SALDO_CLIENTE[2] ; S1S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.006      ; 4.116      ;
-; -3.074 ; SALDO_CLIENTE[2] ; S1S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.006      ; 4.116      ;
-; -3.074 ; SALDO_CLIENTE[2] ; S1S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.006      ; 4.116      ;
-; -3.074 ; SALDO_CLIENTE[2] ; S1S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.006      ; 4.116      ;
-; -3.074 ; SALDO_CLIENTE[2] ; S1S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.006      ; 4.116      ;
-; -3.067 ; SALDO_CLIENTE[2] ; S7S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.004      ; 4.107      ;
-; -3.067 ; SALDO_CLIENTE[2] ; S7S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.004      ; 4.107      ;
-; -3.067 ; SALDO_CLIENTE[2] ; S7S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.004      ; 4.107      ;
-; -3.049 ; SALDO_CLIENTE[4] ; S4S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.011     ; 4.074      ;
-; -3.049 ; SALDO_CLIENTE[4] ; S4S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.011     ; 4.074      ;
-; -3.029 ; SALDO_CLIENTE[2] ; S3S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.064      ;
-; -3.029 ; SALDO_CLIENTE[2] ; S4S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.066      ;
-; -3.029 ; SALDO_CLIENTE[2] ; S3S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.064      ;
-; -3.029 ; SALDO_CLIENTE[2] ; S4S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.066      ;
-; -3.029 ; SALDO_CLIENTE[2] ; S3S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.064      ;
-; -3.029 ; SALDO_CLIENTE[2] ; S4S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.066      ;
-; -3.029 ; SALDO_CLIENTE[2] ; S3S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.064      ;
-; -3.029 ; SALDO_CLIENTE[2] ; S4S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.066      ;
-; -3.029 ; SALDO_CLIENTE[2] ; S3S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.064      ;
-; -3.029 ; SALDO_CLIENTE[2] ; S4S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.066      ;
-; -3.029 ; SALDO_CLIENTE[2] ; S3S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.064      ;
-; -3.029 ; SALDO_CLIENTE[2] ; S3S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.064      ;
-; -3.029 ; SALDO_CLIENTE[2] ; S4S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.066      ;
-; -3.029 ; SALDO_CLIENTE[2] ; S3S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.064      ;
-; -3.025 ; SALDO_CLIENTE[2] ; S2S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.062      ;
-; -3.025 ; SALDO_CLIENTE[2] ; S2S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.062      ;
-; -3.025 ; SALDO_CLIENTE[2] ; S2S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.062      ;
-; -3.025 ; SALDO_CLIENTE[2] ; S2S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.062      ;
-; -3.025 ; SALDO_CLIENTE[2] ; S2S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.062      ;
-; -3.025 ; SALDO_CLIENTE[2] ; S2S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.062      ;
-; -3.025 ; SALDO_CLIENTE[2] ; S2S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.062      ;
-; -3.025 ; SALDO_CLIENTE[2] ; S2S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 4.062      ;
-; -3.008 ; SALDO_CLIENTE[2] ; S5S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.043      ;
-; -3.008 ; SALDO_CLIENTE[2] ; S5S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.043      ;
-; -3.008 ; SALDO_CLIENTE[2] ; S5S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.043      ;
-; -3.008 ; SALDO_CLIENTE[2] ; S5S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.001     ; 4.043      ;
-; -2.982 ; SALDO_CLIENTE[1] ; S1S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.002      ; 4.020      ;
-; -2.982 ; SALDO_CLIENTE[1] ; S1S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.002      ; 4.020      ;
-+--------+------------------+---------+--------------+-------------+--------------+------------+------------+
+-------------------------------
+; Slow Model Datasheet Report ;
+-------------------------------
+Nothing to report.
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Slow Model Setup: 'CLOCK'                                                                             ;
-+-------+------------+------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------+------------+--------------+-------------+--------------+------------+------------+
-; 3.626 ; MEIO_CLOCK ; MEIO_CLOCK ; MEIO_CLOCK   ; CLOCK       ; 0.500        ; 3.497      ; 0.657      ;
-; 4.126 ; MEIO_CLOCK ; MEIO_CLOCK ; MEIO_CLOCK   ; CLOCK       ; 1.000        ; 3.497      ; 0.657      ;
-+-------+------------+------------+--------------+-------------+--------------+------------+------------+
+----------------------------
+; Fast Model Setup Summary ;
+----------------------------
+No paths to report.
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Slow Model Hold: 'CLOCK'                                                                               ;
-+--------+------------+------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+------------+------------+--------------+-------------+--------------+------------+------------+
-; -3.356 ; MEIO_CLOCK ; MEIO_CLOCK ; MEIO_CLOCK   ; CLOCK       ; 0.000        ; 3.497      ; 0.657      ;
-; -2.856 ; MEIO_CLOCK ; MEIO_CLOCK ; MEIO_CLOCK   ; CLOCK       ; -0.500       ; 3.497      ; 0.657      ;
-+--------+------------+------------+--------------+-------------+--------------+------------+------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------+
-; Slow Model Hold: 'MEIO_CLOCK'                                                                                       ;
-+-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; 0.516 ; S6P[6]            ; S6[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.782      ;
-; 0.517 ; S1S[3]            ; S1[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.783      ;
-; 0.517 ; S1S[5]            ; S1[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.783      ;
-; 0.518 ; S6P[2]            ; S6[2]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.784      ;
-; 0.520 ; S1S[1]            ; S1[1]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.786      ;
-; 0.520 ; S1S[2]            ; S1[2]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.786      ;
-; 0.520 ; S7P[4]            ; S7[4]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.786      ;
-; 0.520 ; S6P[0]            ; S6[0]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.786      ;
-; 0.522 ; S6P[4]            ; S6[4]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.788      ;
-; 0.522 ; S1S[4]            ; S1[4]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.788      ;
-; 0.522 ; S1S[6]            ; S1[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.788      ;
-; 0.522 ; S1S[0]            ; S1[0]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.788      ;
-; 0.525 ; S2P[4]            ; S2[4]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.791      ;
-; 0.525 ; S2P[7]            ; S2[7]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.791      ;
-; 0.525 ; DISPLAY_VECTOR[6] ; G2~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.791      ;
-; 0.526 ; DISPLAY_VECTOR[4] ; E2~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.792      ;
-; 0.530 ; DISPLAY_VECTOR[0] ; A2~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.796      ;
-; 0.532 ; DISPLAY_VECTOR[2] ; C2~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.798      ;
-; 0.532 ; DISPLAY_VECTOR[5] ; F2~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.798      ;
-; 0.555 ; DADO2[3]          ; DISPLAY_VECTOR[3] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.821      ;
-; 0.557 ; DADO2[3]          ; DISPLAY_VECTOR[2] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.823      ;
-; 0.557 ; DADO2[3]          ; DISPLAY_VECTOR[5] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.823      ;
-; 0.559 ; DADO2[3]          ; DISPLAY_VECTOR[0] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.825      ;
-; 0.562 ; DADO2[3]          ; DISPLAY_VECTOR[1] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.828      ;
-; 0.562 ; DADO2[3]          ; DISPLAY_VECTOR[4] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.828      ;
-; 0.562 ; DADO2[3]          ; DISPLAY_VECTOR[6] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.828      ;
-; 0.646 ; S2P[3]            ; S2[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.912      ;
-; 0.650 ; S3P[6]            ; S3[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.916      ;
-; 0.650 ; S1S[7]            ; S1[7]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.916      ;
-; 0.652 ; S2P[2]            ; S2[2]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.918      ;
-; 0.654 ; S2P[6]            ; S2[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.920      ;
-; 0.658 ; S1P[7]            ; S1[7]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.001      ; 0.925      ;
-; 0.664 ; DISPLAY_VECTOR[1] ; B2~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.930      ;
-; 0.666 ; S7P[1]            ; S7[1]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.012      ; 0.944      ;
-; 0.672 ; S6P[1]            ; S6[1]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.938      ;
-; 0.676 ; DISPLAY_VECTOR[0] ; A1~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.941      ;
-; 0.689 ; DISPLAY_VECTOR[3] ; D2~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.955      ;
-; 0.694 ; DISPLAYER[3]      ; DADO2[3]          ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.001      ; 0.961      ;
-; 0.695 ; DADO2[1]          ; DISPLAY_VECTOR[3] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.961      ;
-; 0.697 ; DADO2[1]          ; DISPLAY_VECTOR[2] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.963      ;
-; 0.697 ; DADO2[1]          ; DISPLAY_VECTOR[5] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.963      ;
-; 0.698 ; S7P[3]            ; S7[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.012      ; 0.976      ;
-; 0.699 ; S7P[5]            ; S7[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.012      ; 0.977      ;
-; 0.699 ; DADO2[1]          ; DISPLAY_VECTOR[0] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.965      ;
-; 0.702 ; S7P[6]            ; S7[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.012      ; 0.980      ;
-; 0.702 ; S6P[7]            ; S6[7]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.968      ;
-; 0.702 ; S7P[0]            ; S7[0]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.012      ; 0.980      ;
-; 0.702 ; DADO2[1]          ; DISPLAY_VECTOR[1] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.968      ;
-; 0.702 ; DADO2[1]          ; DISPLAY_VECTOR[4] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.968      ;
-; 0.702 ; DADO2[1]          ; DISPLAY_VECTOR[6] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.968      ;
-; 0.706 ; DISPLAY_VECTOR[3] ; D1~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.971      ;
-; 0.709 ; DISPLAY_VECTOR[5] ; F1~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.974      ;
-; 0.711 ; DISPLAY_VECTOR[1] ; B1~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.976      ;
-; 0.712 ; DISPLAY_VECTOR[6] ; G1~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.977      ;
-; 0.717 ; RESULT_SUB[2]     ; S1S[2]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.982      ;
-; 0.717 ; RESULT_SUB[5]     ; S7S[5]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.983      ;
-; 0.717 ; RESULT_SUB[6]     ; S7S[6]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.983      ;
-; 0.722 ; RESULT_SUB[1]     ; S1S[1]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.987      ;
-; 0.725 ; RESULT_SUB[3]     ; S7S[3]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.991      ;
-; 0.755 ; S4S[3]            ; S4[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.012     ; 1.009      ;
-; 0.756 ; S4S[6]            ; S4[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.012     ; 1.010      ;
-; 0.787 ; S1P[5]            ; S1[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.001      ; 1.054      ;
-; 0.791 ; S6S[5]            ; S6[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.057      ;
-; 0.792 ; S3P[2]            ; S3[2]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.058      ;
-; 0.793 ; S7S[3]            ; S7[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.059      ;
-; 0.795 ; S3P[7]            ; S3[7]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.061      ;
-; 0.795 ; S3P[0]            ; S3[0]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.061      ;
-; 0.796 ; S2P[5]            ; S2[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.062      ;
-; 0.796 ; S3P[5]            ; S3[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.062      ;
-; 0.797 ; S6S[3]            ; S6[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.063      ;
-; 0.798 ; S3P[4]            ; S3[4]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.064      ;
-; 0.800 ; S7S[6]            ; S7[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.066      ;
-; 0.824 ; S3P[1]            ; S3[1]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.090      ;
-; 0.825 ; S6S[1]            ; S6[1]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.091      ;
-; 0.825 ; S7S[5]            ; S7[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.091      ;
-; 0.826 ; S6S[7]            ; S6[7]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.092      ;
-; 0.827 ; S2P[0]            ; S2[0]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.093      ;
-; 0.834 ; S2P[1]            ; S2[1]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.100      ;
-; 0.834 ; S1P[4]            ; S1[4]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.001      ; 1.101      ;
-; 0.837 ; S5S[0]            ; S5[0]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.001      ; 1.104      ;
-; 0.844 ; DISPLAY_VECTOR[4] ; E1~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 1.109      ;
-; 0.846 ; DISPLAY_VECTOR[2] ; C1~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 1.111      ;
-; 0.847 ; S4P[3]            ; S4[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.003     ; 1.110      ;
-; 0.848 ; S4S[2]            ; S4[2]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.012     ; 1.102      ;
-; 0.850 ; S5S[5]            ; S5[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.001      ; 1.117      ;
-; 0.873 ; S7P[7]            ; S7[7]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.012      ; 1.151      ;
-; 0.875 ; RESULT_SUB[0]     ; S1S[0]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 1.140      ;
-; 0.924 ; S6P[3]            ; S6[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.190      ;
-; 0.937 ; S5S[1]            ; S5[1]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 1.202      ;
-; 0.954 ; RESULT_SUM[1]     ; S3P[1]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.002     ; 1.218      ;
-; 0.954 ; RESULT_SUM[4]     ; S3P[4]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.002     ; 1.218      ;
-; 0.954 ; RESULT_SUM[0]     ; S3P[0]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.002     ; 1.218      ;
-; 0.956 ; RESULT_SUM[6]     ; S3P[6]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.002     ; 1.220      ;
-; 0.960 ; RESULT_SUM[5]     ; S3P[5]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.002     ; 1.224      ;
-; 0.964 ; S6S[6]            ; S6[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 1.230      ;
-; 0.966 ; S7P[2]            ; S7[2]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.012      ; 1.244      ;
-; 0.967 ; RESULT_SUM[3]     ; S3P[3]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.002     ; 1.231      ;
-; 0.970 ; S4P[1]            ; S4[1]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.002      ; 1.238      ;
-; 0.971 ; RESULT_SUM[5]     ; S2P[5]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 1.236      ;
-; 0.977 ; S1P[6]            ; S1[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.001      ; 1.244      ;
-+-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-
-
-+-------------------------------------------------------------------------------------------------+
-; Slow Model Minimum Pulse Width: 'CLOCK'                                                         ;
-+--------+--------------+----------------+------------------+-------+------------+----------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target         ;
-+--------+--------------+----------------+------------------+-------+------------+----------------+
-; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK ; Rise       ; CLOCK          ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Rise       ; MEIO_CLOCK     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Rise       ; MEIO_CLOCK     ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK|combout  ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK|combout  ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; MEIO_CLOCK|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; MEIO_CLOCK|clk ;
-+--------+--------------+----------------+------------------+-------+------------+----------------+
-
-
-+---------------------------------------------------------------------------------------------------------+
-; Slow Model Minimum Pulse Width: 'MEIO_CLOCK'                                                            ;
-+--------+--------------+----------------+------------------+------------+------------+-------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock      ; Clock Edge ; Target            ;
-+--------+--------------+----------------+------------------+------------+------------+-------------------+
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; A1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; A1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; A2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; A2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; B1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; B1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; B2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; B2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; C1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; C1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; C2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; C2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; D1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; D1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; D2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; D2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DADO2[0]          ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DADO2[0]          ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DADO2[1]          ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DADO2[1]          ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DADO2[2]          ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DADO2[2]          ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DADO2[3]          ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DADO2[3]          ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAYER[0]      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAYER[0]      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAYER[1]      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAYER[1]      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAYER[2]      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAYER[2]      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAYER[3]      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAYER[3]      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[0] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[0] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[1] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[1] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[2] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[2] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[3] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[3] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[4] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[4] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[5] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[5] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[6] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[6] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; E1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; E1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; E2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; E2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; F1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; F1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; F2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; F2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; G1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; G1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; G2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; G2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[3]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[3]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[4]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[4]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[5]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[5]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[6]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[6]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[7]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[7]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[3]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[3]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[4]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[4]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[5]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[5]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[6]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[6]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[7]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[7]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; S1P[0]            ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; S1P[0]            ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; S1P[1]            ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; S1P[1]            ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; S1P[2]            ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; S1P[2]            ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; S1P[3]            ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; S1P[3]            ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; S1P[4]            ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; S1P[4]            ;
-+--------+--------------+----------------+------------------+------------+------------+-------------------+
-
-
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; ENABLE    ; MEIO_CLOCK ; 5.848 ; 5.848 ; Rise       ; MEIO_CLOCK      ;
-; ID[*]     ; MEIO_CLOCK ; 7.222 ; 7.222 ; Rise       ; MEIO_CLOCK      ;
-;  ID[0]    ; MEIO_CLOCK ; 7.071 ; 7.071 ; Rise       ; MEIO_CLOCK      ;
-;  ID[1]    ; MEIO_CLOCK ; 7.166 ; 7.166 ; Rise       ; MEIO_CLOCK      ;
-;  ID[2]    ; MEIO_CLOCK ; 7.222 ; 7.222 ; Rise       ; MEIO_CLOCK      ;
-; OP_CODE   ; MEIO_CLOCK ; 6.122 ; 6.122 ; Rise       ; MEIO_CLOCK      ;
-; RESET     ; MEIO_CLOCK ; 6.154 ; 6.154 ; Rise       ; MEIO_CLOCK      ;
-; VALOR[*]  ; MEIO_CLOCK ; 7.081 ; 7.081 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[0] ; MEIO_CLOCK ; 6.936 ; 6.936 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[1] ; MEIO_CLOCK ; 7.081 ; 7.081 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[2] ; MEIO_CLOCK ; 6.746 ; 6.746 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[3] ; MEIO_CLOCK ; 6.972 ; 6.972 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[4] ; MEIO_CLOCK ; 6.605 ; 6.605 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[5] ; MEIO_CLOCK ; 6.740 ; 6.740 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[6] ; MEIO_CLOCK ; 6.468 ; 6.468 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[7] ; MEIO_CLOCK ; 6.213 ; 6.213 ; Rise       ; MEIO_CLOCK      ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-------------------------------------------------------------------------+
-; Hold Times                                                              ;
-+-----------+------------+--------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+--------+------------+-----------------+
-; ENABLE    ; MEIO_CLOCK ; -4.772 ; -4.772 ; Rise       ; MEIO_CLOCK      ;
-; ID[*]     ; MEIO_CLOCK ; -3.842 ; -3.842 ; Rise       ; MEIO_CLOCK      ;
-;  ID[0]    ; MEIO_CLOCK ; -3.842 ; -3.842 ; Rise       ; MEIO_CLOCK      ;
-;  ID[1]    ; MEIO_CLOCK ; -4.274 ; -4.274 ; Rise       ; MEIO_CLOCK      ;
-;  ID[2]    ; MEIO_CLOCK ; -4.189 ; -4.189 ; Rise       ; MEIO_CLOCK      ;
-; OP_CODE   ; MEIO_CLOCK ; -3.321 ; -3.321 ; Rise       ; MEIO_CLOCK      ;
-; RESET     ; MEIO_CLOCK ; -4.171 ; -4.171 ; Rise       ; MEIO_CLOCK      ;
-; VALOR[*]  ; MEIO_CLOCK ; -3.510 ; -3.510 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[0] ; MEIO_CLOCK ; -3.572 ; -3.572 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[1] ; MEIO_CLOCK ; -3.819 ; -3.819 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[2] ; MEIO_CLOCK ; -3.555 ; -3.555 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[3] ; MEIO_CLOCK ; -3.838 ; -3.838 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[4] ; MEIO_CLOCK ; -3.535 ; -3.535 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[5] ; MEIO_CLOCK ; -3.782 ; -3.782 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[6] ; MEIO_CLOCK ; -3.567 ; -3.567 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[7] ; MEIO_CLOCK ; -3.510 ; -3.510 ; Rise       ; MEIO_CLOCK      ;
-+-----------+------------+--------+--------+------------+-----------------+
-
-
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; A1        ; MEIO_CLOCK ; 7.375 ; 7.375 ; Rise       ; MEIO_CLOCK      ;
-; A2        ; MEIO_CLOCK ; 6.315 ; 6.315 ; Rise       ; MEIO_CLOCK      ;
-; B1        ; MEIO_CLOCK ; 7.288 ; 7.288 ; Rise       ; MEIO_CLOCK      ;
-; B2        ; MEIO_CLOCK ; 6.619 ; 6.619 ; Rise       ; MEIO_CLOCK      ;
-; C1        ; MEIO_CLOCK ; 8.099 ; 8.099 ; Rise       ; MEIO_CLOCK      ;
-; C2        ; MEIO_CLOCK ; 6.145 ; 6.145 ; Rise       ; MEIO_CLOCK      ;
-; D1        ; MEIO_CLOCK ; 8.004 ; 8.004 ; Rise       ; MEIO_CLOCK      ;
-; D2        ; MEIO_CLOCK ; 6.165 ; 6.165 ; Rise       ; MEIO_CLOCK      ;
-; E1        ; MEIO_CLOCK ; 8.069 ; 8.069 ; Rise       ; MEIO_CLOCK      ;
-; E2        ; MEIO_CLOCK ; 6.210 ; 6.210 ; Rise       ; MEIO_CLOCK      ;
-; F1        ; MEIO_CLOCK ; 7.329 ; 7.329 ; Rise       ; MEIO_CLOCK      ;
-; F2        ; MEIO_CLOCK ; 6.495 ; 6.495 ; Rise       ; MEIO_CLOCK      ;
-; G1        ; MEIO_CLOCK ; 7.079 ; 7.079 ; Rise       ; MEIO_CLOCK      ;
-; G2        ; MEIO_CLOCK ; 6.477 ; 6.477 ; Rise       ; MEIO_CLOCK      ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; A1        ; MEIO_CLOCK ; 7.375 ; 7.375 ; Rise       ; MEIO_CLOCK      ;
-; A2        ; MEIO_CLOCK ; 6.315 ; 6.315 ; Rise       ; MEIO_CLOCK      ;
-; B1        ; MEIO_CLOCK ; 7.288 ; 7.288 ; Rise       ; MEIO_CLOCK      ;
-; B2        ; MEIO_CLOCK ; 6.619 ; 6.619 ; Rise       ; MEIO_CLOCK      ;
-; C1        ; MEIO_CLOCK ; 8.099 ; 8.099 ; Rise       ; MEIO_CLOCK      ;
-; C2        ; MEIO_CLOCK ; 6.145 ; 6.145 ; Rise       ; MEIO_CLOCK      ;
-; D1        ; MEIO_CLOCK ; 8.004 ; 8.004 ; Rise       ; MEIO_CLOCK      ;
-; D2        ; MEIO_CLOCK ; 6.165 ; 6.165 ; Rise       ; MEIO_CLOCK      ;
-; E1        ; MEIO_CLOCK ; 8.069 ; 8.069 ; Rise       ; MEIO_CLOCK      ;
-; E2        ; MEIO_CLOCK ; 6.210 ; 6.210 ; Rise       ; MEIO_CLOCK      ;
-; F1        ; MEIO_CLOCK ; 7.329 ; 7.329 ; Rise       ; MEIO_CLOCK      ;
-; F2        ; MEIO_CLOCK ; 6.495 ; 6.495 ; Rise       ; MEIO_CLOCK      ;
-; G1        ; MEIO_CLOCK ; 7.079 ; 7.079 ; Rise       ; MEIO_CLOCK      ;
-; G2        ; MEIO_CLOCK ; 6.477 ; 6.477 ; Rise       ; MEIO_CLOCK      ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-------------------------------------+
-; Fast Model Setup Summary            ;
-+------------+--------+---------------+
-; Clock      ; Slack  ; End Point TNS ;
-+------------+--------+---------------+
-; MEIO_CLOCK ; -1.021 ; -62.036       ;
-; CLOCK      ; 2.217  ; 0.000         ;
-+------------+--------+---------------+
-
-
-+-------------------------------------+
-; Fast Model Hold Summary             ;
-+------------+--------+---------------+
-; Clock      ; Slack  ; End Point TNS ;
-+------------+--------+---------------+
-; CLOCK      ; -1.837 ; -1.837        ;
-; MEIO_CLOCK ; 0.236  ; 0.000         ;
-+------------+--------+---------------+
+---------------------------
+; Fast Model Hold Summary ;
+---------------------------
+No paths to report.
 
 
 -------------------------------
@@ -643,593 +147,32 @@ No paths to report.
 No paths to report.
 
 
-+----------------------------------------+
+------------------------------------------
 ; Fast Model Minimum Pulse Width Summary ;
-+------------+--------+------------------+
-; Clock      ; Slack  ; End Point TNS    ;
-+------------+--------+------------------+
-; CLOCK      ; -1.380 ; -2.380           ;
-; MEIO_CLOCK ; -0.500 ; -221.000         ;
-+------------+--------+------------------+
+------------------------------------------
+No paths to report.
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 'MEIO_CLOCK'                                                                            ;
-+--------+------------------+---------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node        ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+------------------+---------+--------------+-------------+--------------+------------+------------+
-; -1.021 ; SALDO_CLIENTE[0] ; S4S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.013     ; 2.040      ;
-; -1.021 ; SALDO_CLIENTE[0] ; S4S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.013     ; 2.040      ;
-; -0.969 ; SALDO_CLIENTE[2] ; S4S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.013     ; 1.988      ;
-; -0.969 ; SALDO_CLIENTE[2] ; S4S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.013     ; 1.988      ;
-; -0.963 ; SALDO_CLIENTE[0] ; S1S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.003      ; 1.998      ;
-; -0.963 ; SALDO_CLIENTE[0] ; S1S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.003      ; 1.998      ;
-; -0.963 ; SALDO_CLIENTE[0] ; S1S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.003      ; 1.998      ;
-; -0.955 ; SALDO_CLIENTE[0] ; S6S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.994      ;
-; -0.955 ; SALDO_CLIENTE[0] ; S6S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.994      ;
-; -0.955 ; SALDO_CLIENTE[0] ; S6S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.994      ;
-; -0.955 ; SALDO_CLIENTE[0] ; S6S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.994      ;
-; -0.955 ; SALDO_CLIENTE[0] ; S6S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.994      ;
-; -0.955 ; SALDO_CLIENTE[0] ; S6S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.994      ;
-; -0.955 ; SALDO_CLIENTE[0] ; S6S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.994      ;
-; -0.955 ; SALDO_CLIENTE[0] ; S6S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.994      ;
-; -0.952 ; SALDO_CLIENTE[0] ; S1S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.005      ; 1.989      ;
-; -0.952 ; SALDO_CLIENTE[0] ; S1S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.005      ; 1.989      ;
-; -0.952 ; SALDO_CLIENTE[0] ; S1S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.005      ; 1.989      ;
-; -0.952 ; SALDO_CLIENTE[0] ; S1S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.005      ; 1.989      ;
-; -0.952 ; SALDO_CLIENTE[0] ; S1S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.005      ; 1.989      ;
-; -0.944 ; SALDO_CLIENTE[0] ; S7S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.004      ; 1.980      ;
-; -0.944 ; SALDO_CLIENTE[0] ; S7S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.004      ; 1.980      ;
-; -0.944 ; SALDO_CLIENTE[0] ; S7S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.004      ; 1.980      ;
-; -0.929 ; SALDO_CLIENTE[0] ; S3S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.961      ;
-; -0.929 ; SALDO_CLIENTE[0] ; S3S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.961      ;
-; -0.929 ; SALDO_CLIENTE[0] ; S3S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.961      ;
-; -0.929 ; SALDO_CLIENTE[0] ; S3S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.961      ;
-; -0.929 ; SALDO_CLIENTE[0] ; S3S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.961      ;
-; -0.929 ; SALDO_CLIENTE[0] ; S3S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.961      ;
-; -0.929 ; SALDO_CLIENTE[0] ; S3S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.961      ;
-; -0.929 ; SALDO_CLIENTE[0] ; S3S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.961      ;
-; -0.926 ; SALDO_CLIENTE[0] ; S2S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.959      ;
-; -0.926 ; SALDO_CLIENTE[0] ; S4S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.959      ;
-; -0.926 ; SALDO_CLIENTE[0] ; S2S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.959      ;
-; -0.926 ; SALDO_CLIENTE[0] ; S4S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.959      ;
-; -0.926 ; SALDO_CLIENTE[0] ; S2S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.959      ;
-; -0.926 ; SALDO_CLIENTE[0] ; S4S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.959      ;
-; -0.926 ; SALDO_CLIENTE[0] ; S2S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.959      ;
-; -0.926 ; SALDO_CLIENTE[0] ; S4S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.959      ;
-; -0.926 ; SALDO_CLIENTE[0] ; S2S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.959      ;
-; -0.926 ; SALDO_CLIENTE[0] ; S4S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.959      ;
-; -0.926 ; SALDO_CLIENTE[0] ; S2S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.959      ;
-; -0.926 ; SALDO_CLIENTE[0] ; S2S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.959      ;
-; -0.926 ; SALDO_CLIENTE[0] ; S4S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.959      ;
-; -0.926 ; SALDO_CLIENTE[0] ; S2S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.959      ;
-; -0.917 ; SALDO_CLIENTE[0] ; S5S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.949      ;
-; -0.917 ; SALDO_CLIENTE[0] ; S5S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.949      ;
-; -0.917 ; SALDO_CLIENTE[0] ; S5S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.949      ;
-; -0.917 ; SALDO_CLIENTE[0] ; S5S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.949      ;
-; -0.914 ; SALDO_CLIENTE[1] ; S4S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.014     ; 1.932      ;
-; -0.914 ; SALDO_CLIENTE[1] ; S4S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.014     ; 1.932      ;
-; -0.911 ; SALDO_CLIENTE[2] ; S1S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.003      ; 1.946      ;
-; -0.911 ; SALDO_CLIENTE[2] ; S1S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.003      ; 1.946      ;
-; -0.911 ; SALDO_CLIENTE[2] ; S1S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.003      ; 1.946      ;
-; -0.903 ; SALDO_CLIENTE[2] ; S6S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.942      ;
-; -0.903 ; SALDO_CLIENTE[2] ; S6S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.942      ;
-; -0.903 ; SALDO_CLIENTE[2] ; S6S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.942      ;
-; -0.903 ; SALDO_CLIENTE[2] ; S6S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.942      ;
-; -0.903 ; SALDO_CLIENTE[2] ; S6S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.942      ;
-; -0.903 ; SALDO_CLIENTE[2] ; S6S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.942      ;
-; -0.903 ; SALDO_CLIENTE[2] ; S6S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.942      ;
-; -0.903 ; SALDO_CLIENTE[2] ; S6S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.007      ; 1.942      ;
-; -0.900 ; SALDO_CLIENTE[2] ; S1S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.005      ; 1.937      ;
-; -0.900 ; SALDO_CLIENTE[2] ; S1S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.005      ; 1.937      ;
-; -0.900 ; SALDO_CLIENTE[2] ; S1S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.005      ; 1.937      ;
-; -0.900 ; SALDO_CLIENTE[2] ; S1S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.005      ; 1.937      ;
-; -0.900 ; SALDO_CLIENTE[2] ; S1S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.005      ; 1.937      ;
-; -0.892 ; SALDO_CLIENTE[2] ; S7S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.004      ; 1.928      ;
-; -0.892 ; SALDO_CLIENTE[2] ; S7S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.004      ; 1.928      ;
-; -0.892 ; SALDO_CLIENTE[2] ; S7S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.004      ; 1.928      ;
-; -0.890 ; SALDO_CLIENTE[4] ; S4S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.013     ; 1.909      ;
-; -0.890 ; SALDO_CLIENTE[4] ; S4S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; -0.013     ; 1.909      ;
-; -0.877 ; SALDO_CLIENTE[2] ; S3S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.909      ;
-; -0.877 ; SALDO_CLIENTE[2] ; S3S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.909      ;
-; -0.877 ; SALDO_CLIENTE[2] ; S3S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.909      ;
-; -0.877 ; SALDO_CLIENTE[2] ; S3S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.909      ;
-; -0.877 ; SALDO_CLIENTE[2] ; S3S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.909      ;
-; -0.877 ; SALDO_CLIENTE[2] ; S3S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.909      ;
-; -0.877 ; SALDO_CLIENTE[2] ; S3S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.909      ;
-; -0.877 ; SALDO_CLIENTE[2] ; S3S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.909      ;
-; -0.874 ; SALDO_CLIENTE[2] ; S2S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.907      ;
-; -0.874 ; SALDO_CLIENTE[2] ; S4S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.907      ;
-; -0.874 ; SALDO_CLIENTE[2] ; S2S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.907      ;
-; -0.874 ; SALDO_CLIENTE[2] ; S4S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.907      ;
-; -0.874 ; SALDO_CLIENTE[2] ; S2S[3]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.907      ;
-; -0.874 ; SALDO_CLIENTE[2] ; S4S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.907      ;
-; -0.874 ; SALDO_CLIENTE[2] ; S2S[4]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.907      ;
-; -0.874 ; SALDO_CLIENTE[2] ; S4S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.907      ;
-; -0.874 ; SALDO_CLIENTE[2] ; S2S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.907      ;
-; -0.874 ; SALDO_CLIENTE[2] ; S4S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.907      ;
-; -0.874 ; SALDO_CLIENTE[2] ; S2S[6]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.907      ;
-; -0.874 ; SALDO_CLIENTE[2] ; S2S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.907      ;
-; -0.874 ; SALDO_CLIENTE[2] ; S4S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.907      ;
-; -0.874 ; SALDO_CLIENTE[2] ; S2S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.001      ; 1.907      ;
-; -0.865 ; SALDO_CLIENTE[2] ; S5S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.897      ;
-; -0.865 ; SALDO_CLIENTE[2] ; S5S[5]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.897      ;
-; -0.865 ; SALDO_CLIENTE[2] ; S5S[7]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.897      ;
-; -0.865 ; SALDO_CLIENTE[2] ; S5S[0]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.000      ; 1.897      ;
-; -0.856 ; SALDO_CLIENTE[1] ; S1S[1]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.002      ; 1.890      ;
-; -0.856 ; SALDO_CLIENTE[1] ; S1S[2]  ; MEIO_CLOCK   ; MEIO_CLOCK  ; 1.000        ; 0.002      ; 1.890      ;
-+--------+------------------+---------+--------------+-------------+--------------+------------+------------+
+-------------------------------
+; Fast Model Datasheet Report ;
+-------------------------------
+Nothing to report.
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 'CLOCK'                                                                             ;
-+-------+------------+------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------+------------+--------------+-------------+--------------+------------+------------+
-; 2.217 ; MEIO_CLOCK ; MEIO_CLOCK ; MEIO_CLOCK   ; CLOCK       ; 0.500        ; 1.911      ; 0.367      ;
-; 2.717 ; MEIO_CLOCK ; MEIO_CLOCK ; MEIO_CLOCK   ; CLOCK       ; 1.000        ; 1.911      ; 0.367      ;
-+-------+------------+------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                        ;
++------------------+-------+------+----------+---------+---------------------+
+; Clock            ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-------+------+----------+---------+---------------------+
+; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; N/A                 ;
+; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; 0.0                 ;
++------------------+-------+------+----------+---------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Fast Model Hold: 'CLOCK'                                                                               ;
-+--------+------------+------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+------------+------------+--------------+-------------+--------------+------------+------------+
-; -1.837 ; MEIO_CLOCK ; MEIO_CLOCK ; MEIO_CLOCK   ; CLOCK       ; 0.000        ; 1.911      ; 0.367      ;
-; -1.337 ; MEIO_CLOCK ; MEIO_CLOCK ; MEIO_CLOCK   ; CLOCK       ; -0.500       ; 1.911      ; 0.367      ;
-+--------+------------+------------+--------------+-------------+--------------+------------+------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------+
-; Fast Model Hold: 'MEIO_CLOCK'                                                                                       ;
-+-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; 0.236 ; S6P[6]            ; S6[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.388      ;
-; 0.237 ; S1S[5]            ; S1[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.389      ;
-; 0.238 ; S1S[3]            ; S1[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.390      ;
-; 0.239 ; S1S[1]            ; S1[1]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.391      ;
-; 0.239 ; S6P[2]            ; S6[2]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.391      ;
-; 0.240 ; S1S[2]            ; S1[2]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.392      ;
-; 0.240 ; S7P[4]            ; S7[4]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.392      ;
-; 0.240 ; S6P[0]            ; S6[0]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.392      ;
-; 0.241 ; S6P[4]            ; S6[4]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.393      ;
-; 0.241 ; S1S[6]            ; S1[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.393      ;
-; 0.241 ; DISPLAY_VECTOR[4] ; E2~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.393      ;
-; 0.241 ; DISPLAY_VECTOR[6] ; G2~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.393      ;
-; 0.242 ; S1S[4]            ; S1[4]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.394      ;
-; 0.242 ; S2P[7]            ; S2[7]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.394      ;
-; 0.242 ; S1S[0]            ; S1[0]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.394      ;
-; 0.243 ; S2P[4]            ; S2[4]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.395      ;
-; 0.244 ; DISPLAY_VECTOR[0] ; A2~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.396      ;
-; 0.245 ; DISPLAY_VECTOR[2] ; C2~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.397      ;
-; 0.245 ; DISPLAY_VECTOR[5] ; F2~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.397      ;
-; 0.260 ; DADO2[3]          ; DISPLAY_VECTOR[3] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.412      ;
-; 0.262 ; DADO2[3]          ; DISPLAY_VECTOR[2] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.414      ;
-; 0.262 ; DADO2[3]          ; DISPLAY_VECTOR[5] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.414      ;
-; 0.263 ; DADO2[3]          ; DISPLAY_VECTOR[0] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.415      ;
-; 0.266 ; DADO2[3]          ; DISPLAY_VECTOR[1] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.418      ;
-; 0.266 ; DADO2[3]          ; DISPLAY_VECTOR[4] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.418      ;
-; 0.266 ; DADO2[3]          ; DISPLAY_VECTOR[6] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.418      ;
-; 0.290 ; S2P[2]            ; S2[2]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.442      ;
-; 0.290 ; S2P[3]            ; S2[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.442      ;
-; 0.290 ; S1S[7]            ; S1[7]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.442      ;
-; 0.292 ; S2P[6]            ; S2[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.444      ;
-; 0.292 ; S3P[6]            ; S3[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.444      ;
-; 0.305 ; S7P[1]            ; S7[1]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.014      ; 0.471      ;
-; 0.309 ; S1P[7]            ; S1[7]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.461      ;
-; 0.311 ; S7P[3]            ; S7[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.014      ; 0.477      ;
-; 0.312 ; S7P[5]            ; S7[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.014      ; 0.478      ;
-; 0.313 ; S7P[6]            ; S7[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.014      ; 0.479      ;
-; 0.313 ; S7P[0]            ; S7[0]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.014      ; 0.479      ;
-; 0.315 ; S6P[1]            ; S6[1]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.467      ;
-; 0.316 ; DISPLAYER[3]      ; DADO2[3]          ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.001      ; 0.469      ;
-; 0.316 ; DISPLAY_VECTOR[0] ; A1~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.467      ;
-; 0.319 ; DADO2[1]          ; DISPLAY_VECTOR[3] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.471      ;
-; 0.319 ; DADO2[1]          ; DISPLAY_VECTOR[2] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.471      ;
-; 0.319 ; DADO2[1]          ; DISPLAY_VECTOR[5] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.471      ;
-; 0.321 ; S6P[7]            ; S6[7]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.473      ;
-; 0.321 ; DADO2[1]          ; DISPLAY_VECTOR[0] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.473      ;
-; 0.322 ; DISPLAY_VECTOR[3] ; D1~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.473      ;
-; 0.323 ; DISPLAY_VECTOR[5] ; F1~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.474      ;
-; 0.323 ; DADO2[1]          ; DISPLAY_VECTOR[4] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.475      ;
-; 0.324 ; DISPLAY_VECTOR[1] ; B1~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.475      ;
-; 0.324 ; DADO2[1]          ; DISPLAY_VECTOR[1] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.476      ;
-; 0.324 ; DADO2[1]          ; DISPLAY_VECTOR[6] ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.476      ;
-; 0.325 ; DISPLAY_VECTOR[1] ; B2~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.477      ;
-; 0.326 ; DISPLAY_VECTOR[6] ; G1~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.477      ;
-; 0.328 ; RESULT_SUB[2]     ; S1S[2]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.479      ;
-; 0.328 ; RESULT_SUB[5]     ; S7S[5]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.480      ;
-; 0.329 ; RESULT_SUB[6]     ; S7S[6]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.481      ;
-; 0.332 ; RESULT_SUB[1]     ; S1S[1]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.483      ;
-; 0.334 ; RESULT_SUB[3]     ; S7S[3]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.486      ;
-; 0.340 ; DISPLAY_VECTOR[3] ; D2~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.492      ;
-; 0.356 ; S4S[3]            ; S4[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.014     ; 0.494      ;
-; 0.356 ; S7S[3]            ; S7[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.508      ;
-; 0.358 ; S6S[3]            ; S6[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.510      ;
-; 0.358 ; S6S[5]            ; S6[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.510      ;
-; 0.358 ; S4S[6]            ; S4[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.014     ; 0.496      ;
-; 0.359 ; S1P[5]            ; S1[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.511      ;
-; 0.360 ; S7S[6]            ; S7[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.512      ;
-; 0.361 ; S3P[2]            ; S3[2]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.513      ;
-; 0.362 ; S3P[7]            ; S3[7]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.514      ;
-; 0.362 ; S3P[0]            ; S3[0]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.514      ;
-; 0.363 ; S2P[5]            ; S2[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.515      ;
-; 0.363 ; S3P[5]            ; S3[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.515      ;
-; 0.365 ; S7S[5]            ; S7[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.517      ;
-; 0.366 ; S3P[4]            ; S3[4]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.518      ;
-; 0.367 ; S6S[1]            ; S6[1]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.519      ;
-; 0.367 ; S6S[7]            ; S6[7]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.519      ;
-; 0.368 ; S2P[0]            ; S2[0]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.520      ;
-; 0.372 ; S3P[1]            ; S3[1]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.524      ;
-; 0.373 ; S5S[0]            ; S5[0]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.525      ;
-; 0.373 ; S1P[4]            ; S1[4]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.525      ;
-; 0.379 ; S2P[1]            ; S2[1]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.531      ;
-; 0.379 ; S5S[5]            ; S5[5]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.531      ;
-; 0.382 ; S4P[3]            ; S4[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.003     ; 0.531      ;
-; 0.388 ; S4S[2]            ; S4[2]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.014     ; 0.526      ;
-; 0.388 ; S7P[7]            ; S7[7]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.014      ; 0.554      ;
-; 0.406 ; DISPLAY_VECTOR[4] ; E1~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.557      ;
-; 0.408 ; DISPLAY_VECTOR[2] ; C1~reg0           ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.559      ;
-; 0.417 ; S6P[3]            ; S6[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.569      ;
-; 0.425 ; S7P[2]            ; S7[2]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.014      ; 0.591      ;
-; 0.426 ; S5S[1]            ; S5[1]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.577      ;
-; 0.426 ; RESULT_SUB[0]     ; S1S[0]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.577      ;
-; 0.434 ; RESULT_SUM[1]     ; S3P[1]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.585      ;
-; 0.436 ; RESULT_SUM[4]     ; S3P[4]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.587      ;
-; 0.436 ; RESULT_SUM[0]     ; S3P[0]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.587      ;
-; 0.436 ; S6S[6]            ; S6[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.588      ;
-; 0.437 ; S6S[0]            ; S6[0]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.589      ;
-; 0.438 ; S6S[2]            ; S6[2]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.590      ;
-; 0.439 ; S6S[4]            ; S6[4]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.591      ;
-; 0.439 ; S1P[6]            ; S1[6]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.591      ;
-; 0.440 ; RESULT_SUM[5]     ; S3P[5]            ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; -0.001     ; 0.591      ;
-; 0.441 ; S1P[3]            ; S1[3]             ; MEIO_CLOCK   ; MEIO_CLOCK  ; 0.000        ; 0.000      ; 0.593      ;
-+-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-
-
-+-------------------------------------------------------------------------------------------------+
-; Fast Model Minimum Pulse Width: 'CLOCK'                                                         ;
-+--------+--------------+----------------+------------------+-------+------------+----------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target         ;
-+--------+--------------+----------------+------------------+-------+------------+----------------+
-; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK ; Rise       ; CLOCK          ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Rise       ; MEIO_CLOCK     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Rise       ; MEIO_CLOCK     ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK|combout  ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK|combout  ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; MEIO_CLOCK|clk ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; MEIO_CLOCK|clk ;
-+--------+--------------+----------------+------------------+-------+------------+----------------+
-
-
-+---------------------------------------------------------------------------------------------------------+
-; Fast Model Minimum Pulse Width: 'MEIO_CLOCK'                                                            ;
-+--------+--------------+----------------+------------------+------------+------------+-------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock      ; Clock Edge ; Target            ;
-+--------+--------------+----------------+------------------+------------+------------+-------------------+
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; A1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; A1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; A2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; A2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; B1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; B1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; B2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; B2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; C1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; C1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; C2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; C2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; D1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; D1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; D2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; D2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DADO2[0]          ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DADO2[0]          ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DADO2[1]          ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DADO2[1]          ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DADO2[2]          ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DADO2[2]          ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DADO2[3]          ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DADO2[3]          ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAYER[0]      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAYER[0]      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAYER[1]      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAYER[1]      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAYER[2]      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAYER[2]      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAYER[3]      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAYER[3]      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[0] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[0] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[1] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[1] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[2] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[2] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[3] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[3] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[4] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[4] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[5] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[5] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[6] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; DISPLAY_VECTOR[6] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; E1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; E1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; E2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; E2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; F1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; F1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; F2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; F2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; G1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; G1~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; G2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; G2~reg0           ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[3]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[3]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[4]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[4]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[5]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[5]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[6]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[6]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUB[7]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUB[7]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[0]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[1]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[2]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[3]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[3]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[4]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[4]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[5]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[5]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[6]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[6]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; RESULT_SUM[7]     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; RESULT_SUM[7]     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; S1P[0]            ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; S1P[0]            ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; S1P[1]            ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; S1P[1]            ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; S1P[2]            ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; S1P[2]            ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; S1P[3]            ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; S1P[3]            ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MEIO_CLOCK ; Rise       ; S1P[4]            ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MEIO_CLOCK ; Rise       ; S1P[4]            ;
-+--------+--------------+----------------+------------------+------------+------------+-------------------+
-
-
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; ENABLE    ; MEIO_CLOCK ; 3.079 ; 3.079 ; Rise       ; MEIO_CLOCK      ;
-; ID[*]     ; MEIO_CLOCK ; 3.577 ; 3.577 ; Rise       ; MEIO_CLOCK      ;
-;  ID[0]    ; MEIO_CLOCK ; 3.509 ; 3.509 ; Rise       ; MEIO_CLOCK      ;
-;  ID[1]    ; MEIO_CLOCK ; 3.542 ; 3.542 ; Rise       ; MEIO_CLOCK      ;
-;  ID[2]    ; MEIO_CLOCK ; 3.577 ; 3.577 ; Rise       ; MEIO_CLOCK      ;
-; OP_CODE   ; MEIO_CLOCK ; 3.224 ; 3.224 ; Rise       ; MEIO_CLOCK      ;
-; RESET     ; MEIO_CLOCK ; 3.271 ; 3.271 ; Rise       ; MEIO_CLOCK      ;
-; VALOR[*]  ; MEIO_CLOCK ; 3.603 ; 3.603 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[0] ; MEIO_CLOCK ; 3.543 ; 3.543 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[1] ; MEIO_CLOCK ; 3.603 ; 3.603 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[2] ; MEIO_CLOCK ; 3.453 ; 3.453 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[3] ; MEIO_CLOCK ; 3.556 ; 3.556 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[4] ; MEIO_CLOCK ; 3.382 ; 3.382 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[5] ; MEIO_CLOCK ; 3.423 ; 3.423 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[6] ; MEIO_CLOCK ; 3.305 ; 3.305 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[7] ; MEIO_CLOCK ; 3.227 ; 3.227 ; Rise       ; MEIO_CLOCK      ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-------------------------------------------------------------------------+
-; Hold Times                                                              ;
-+-----------+------------+--------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+--------+------------+-----------------+
-; ENABLE    ; MEIO_CLOCK ; -2.559 ; -2.559 ; Rise       ; MEIO_CLOCK      ;
-; ID[*]     ; MEIO_CLOCK ; -2.082 ; -2.082 ; Rise       ; MEIO_CLOCK      ;
-;  ID[0]    ; MEIO_CLOCK ; -2.082 ; -2.082 ; Rise       ; MEIO_CLOCK      ;
-;  ID[1]    ; MEIO_CLOCK ; -2.256 ; -2.256 ; Rise       ; MEIO_CLOCK      ;
-;  ID[2]    ; MEIO_CLOCK ; -2.324 ; -2.324 ; Rise       ; MEIO_CLOCK      ;
-; OP_CODE   ; MEIO_CLOCK ; -1.852 ; -1.852 ; Rise       ; MEIO_CLOCK      ;
-; RESET     ; MEIO_CLOCK ; -2.330 ; -2.330 ; Rise       ; MEIO_CLOCK      ;
-; VALOR[*]  ; MEIO_CLOCK ; -1.926 ; -1.926 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[0] ; MEIO_CLOCK ; -1.944 ; -1.944 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[1] ; MEIO_CLOCK ; -2.073 ; -2.073 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[2] ; MEIO_CLOCK ; -1.940 ; -1.940 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[3] ; MEIO_CLOCK ; -2.072 ; -2.072 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[4] ; MEIO_CLOCK ; -1.928 ; -1.928 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[5] ; MEIO_CLOCK ; -2.027 ; -2.027 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[6] ; MEIO_CLOCK ; -1.941 ; -1.941 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[7] ; MEIO_CLOCK ; -1.926 ; -1.926 ; Rise       ; MEIO_CLOCK      ;
-+-----------+------------+--------+--------+------------+-----------------+
-
-
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; A1        ; MEIO_CLOCK ; 4.106 ; 4.106 ; Rise       ; MEIO_CLOCK      ;
-; A2        ; MEIO_CLOCK ; 3.548 ; 3.548 ; Rise       ; MEIO_CLOCK      ;
-; B1        ; MEIO_CLOCK ; 4.072 ; 4.072 ; Rise       ; MEIO_CLOCK      ;
-; B2        ; MEIO_CLOCK ; 3.687 ; 3.687 ; Rise       ; MEIO_CLOCK      ;
-; C1        ; MEIO_CLOCK ; 4.395 ; 4.395 ; Rise       ; MEIO_CLOCK      ;
-; C2        ; MEIO_CLOCK ; 3.416 ; 3.416 ; Rise       ; MEIO_CLOCK      ;
-; D1        ; MEIO_CLOCK ; 4.333 ; 4.333 ; Rise       ; MEIO_CLOCK      ;
-; D2        ; MEIO_CLOCK ; 3.426 ; 3.426 ; Rise       ; MEIO_CLOCK      ;
-; E1        ; MEIO_CLOCK ; 4.377 ; 4.377 ; Rise       ; MEIO_CLOCK      ;
-; E2        ; MEIO_CLOCK ; 3.466 ; 3.466 ; Rise       ; MEIO_CLOCK      ;
-; F1        ; MEIO_CLOCK ; 4.073 ; 4.073 ; Rise       ; MEIO_CLOCK      ;
-; F2        ; MEIO_CLOCK ; 3.587 ; 3.587 ; Rise       ; MEIO_CLOCK      ;
-; G1        ; MEIO_CLOCK ; 3.955 ; 3.955 ; Rise       ; MEIO_CLOCK      ;
-; G2        ; MEIO_CLOCK ; 3.580 ; 3.580 ; Rise       ; MEIO_CLOCK      ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; A1        ; MEIO_CLOCK ; 4.106 ; 4.106 ; Rise       ; MEIO_CLOCK      ;
-; A2        ; MEIO_CLOCK ; 3.548 ; 3.548 ; Rise       ; MEIO_CLOCK      ;
-; B1        ; MEIO_CLOCK ; 4.072 ; 4.072 ; Rise       ; MEIO_CLOCK      ;
-; B2        ; MEIO_CLOCK ; 3.687 ; 3.687 ; Rise       ; MEIO_CLOCK      ;
-; C1        ; MEIO_CLOCK ; 4.395 ; 4.395 ; Rise       ; MEIO_CLOCK      ;
-; C2        ; MEIO_CLOCK ; 3.416 ; 3.416 ; Rise       ; MEIO_CLOCK      ;
-; D1        ; MEIO_CLOCK ; 4.333 ; 4.333 ; Rise       ; MEIO_CLOCK      ;
-; D2        ; MEIO_CLOCK ; 3.426 ; 3.426 ; Rise       ; MEIO_CLOCK      ;
-; E1        ; MEIO_CLOCK ; 4.377 ; 4.377 ; Rise       ; MEIO_CLOCK      ;
-; E2        ; MEIO_CLOCK ; 3.466 ; 3.466 ; Rise       ; MEIO_CLOCK      ;
-; F1        ; MEIO_CLOCK ; 4.073 ; 4.073 ; Rise       ; MEIO_CLOCK      ;
-; F2        ; MEIO_CLOCK ; 3.587 ; 3.587 ; Rise       ; MEIO_CLOCK      ;
-; G1        ; MEIO_CLOCK ; 3.955 ; 3.955 ; Rise       ; MEIO_CLOCK      ;
-; G2        ; MEIO_CLOCK ; 3.580 ; 3.580 ; Rise       ; MEIO_CLOCK      ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+---------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                             ;
-+------------------+----------+--------+----------+---------+---------------------+
-; Clock            ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+----------+--------+----------+---------+---------------------+
-; Worst-case Slack ; -3.327   ; -3.356 ; N/A      ; N/A     ; -1.380              ;
-;  CLOCK           ; 2.217    ; -3.356 ; N/A      ; N/A     ; -1.380              ;
-;  MEIO_CLOCK      ; -3.327   ; 0.236  ; N/A      ; N/A     ; -0.500              ;
-; Design-wide TNS  ; -275.617 ; -3.356 ; 0.0      ; 0.0     ; -223.38             ;
-;  CLOCK           ; 0.000    ; -3.356 ; N/A      ; N/A     ; -2.380              ;
-;  MEIO_CLOCK      ; -275.617 ; 0.000  ; N/A      ; N/A     ; -221.000            ;
-+------------------+----------+--------+----------+---------+---------------------+
-
-
-+-----------------------------------------------------------------------+
-; Setup Times                                                           ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; ENABLE    ; MEIO_CLOCK ; 5.848 ; 5.848 ; Rise       ; MEIO_CLOCK      ;
-; ID[*]     ; MEIO_CLOCK ; 7.222 ; 7.222 ; Rise       ; MEIO_CLOCK      ;
-;  ID[0]    ; MEIO_CLOCK ; 7.071 ; 7.071 ; Rise       ; MEIO_CLOCK      ;
-;  ID[1]    ; MEIO_CLOCK ; 7.166 ; 7.166 ; Rise       ; MEIO_CLOCK      ;
-;  ID[2]    ; MEIO_CLOCK ; 7.222 ; 7.222 ; Rise       ; MEIO_CLOCK      ;
-; OP_CODE   ; MEIO_CLOCK ; 6.122 ; 6.122 ; Rise       ; MEIO_CLOCK      ;
-; RESET     ; MEIO_CLOCK ; 6.154 ; 6.154 ; Rise       ; MEIO_CLOCK      ;
-; VALOR[*]  ; MEIO_CLOCK ; 7.081 ; 7.081 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[0] ; MEIO_CLOCK ; 6.936 ; 6.936 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[1] ; MEIO_CLOCK ; 7.081 ; 7.081 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[2] ; MEIO_CLOCK ; 6.746 ; 6.746 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[3] ; MEIO_CLOCK ; 6.972 ; 6.972 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[4] ; MEIO_CLOCK ; 6.605 ; 6.605 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[5] ; MEIO_CLOCK ; 6.740 ; 6.740 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[6] ; MEIO_CLOCK ; 6.468 ; 6.468 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[7] ; MEIO_CLOCK ; 6.213 ; 6.213 ; Rise       ; MEIO_CLOCK      ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-------------------------------------------------------------------------+
-; Hold Times                                                              ;
-+-----------+------------+--------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+--------+------------+-----------------+
-; ENABLE    ; MEIO_CLOCK ; -2.559 ; -2.559 ; Rise       ; MEIO_CLOCK      ;
-; ID[*]     ; MEIO_CLOCK ; -2.082 ; -2.082 ; Rise       ; MEIO_CLOCK      ;
-;  ID[0]    ; MEIO_CLOCK ; -2.082 ; -2.082 ; Rise       ; MEIO_CLOCK      ;
-;  ID[1]    ; MEIO_CLOCK ; -2.256 ; -2.256 ; Rise       ; MEIO_CLOCK      ;
-;  ID[2]    ; MEIO_CLOCK ; -2.324 ; -2.324 ; Rise       ; MEIO_CLOCK      ;
-; OP_CODE   ; MEIO_CLOCK ; -1.852 ; -1.852 ; Rise       ; MEIO_CLOCK      ;
-; RESET     ; MEIO_CLOCK ; -2.330 ; -2.330 ; Rise       ; MEIO_CLOCK      ;
-; VALOR[*]  ; MEIO_CLOCK ; -1.926 ; -1.926 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[0] ; MEIO_CLOCK ; -1.944 ; -1.944 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[1] ; MEIO_CLOCK ; -2.073 ; -2.073 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[2] ; MEIO_CLOCK ; -1.940 ; -1.940 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[3] ; MEIO_CLOCK ; -2.072 ; -2.072 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[4] ; MEIO_CLOCK ; -1.928 ; -1.928 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[5] ; MEIO_CLOCK ; -2.027 ; -2.027 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[6] ; MEIO_CLOCK ; -1.941 ; -1.941 ; Rise       ; MEIO_CLOCK      ;
-;  VALOR[7] ; MEIO_CLOCK ; -1.926 ; -1.926 ; Rise       ; MEIO_CLOCK      ;
-+-----------+------------+--------+--------+------------+-----------------+
-
-
-+-----------------------------------------------------------------------+
-; Clock to Output Times                                                 ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; A1        ; MEIO_CLOCK ; 7.375 ; 7.375 ; Rise       ; MEIO_CLOCK      ;
-; A2        ; MEIO_CLOCK ; 6.315 ; 6.315 ; Rise       ; MEIO_CLOCK      ;
-; B1        ; MEIO_CLOCK ; 7.288 ; 7.288 ; Rise       ; MEIO_CLOCK      ;
-; B2        ; MEIO_CLOCK ; 6.619 ; 6.619 ; Rise       ; MEIO_CLOCK      ;
-; C1        ; MEIO_CLOCK ; 8.099 ; 8.099 ; Rise       ; MEIO_CLOCK      ;
-; C2        ; MEIO_CLOCK ; 6.145 ; 6.145 ; Rise       ; MEIO_CLOCK      ;
-; D1        ; MEIO_CLOCK ; 8.004 ; 8.004 ; Rise       ; MEIO_CLOCK      ;
-; D2        ; MEIO_CLOCK ; 6.165 ; 6.165 ; Rise       ; MEIO_CLOCK      ;
-; E1        ; MEIO_CLOCK ; 8.069 ; 8.069 ; Rise       ; MEIO_CLOCK      ;
-; E2        ; MEIO_CLOCK ; 6.210 ; 6.210 ; Rise       ; MEIO_CLOCK      ;
-; F1        ; MEIO_CLOCK ; 7.329 ; 7.329 ; Rise       ; MEIO_CLOCK      ;
-; F2        ; MEIO_CLOCK ; 6.495 ; 6.495 ; Rise       ; MEIO_CLOCK      ;
-; G1        ; MEIO_CLOCK ; 7.079 ; 7.079 ; Rise       ; MEIO_CLOCK      ;
-; G2        ; MEIO_CLOCK ; 6.477 ; 6.477 ; Rise       ; MEIO_CLOCK      ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+-----------------------------------------------------------------------+
-; Minimum Clock to Output Times                                         ;
-+-----------+------------+-------+-------+------------+-----------------+
-; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-----------+------------+-------+-------+------------+-----------------+
-; A1        ; MEIO_CLOCK ; 4.106 ; 4.106 ; Rise       ; MEIO_CLOCK      ;
-; A2        ; MEIO_CLOCK ; 3.548 ; 3.548 ; Rise       ; MEIO_CLOCK      ;
-; B1        ; MEIO_CLOCK ; 4.072 ; 4.072 ; Rise       ; MEIO_CLOCK      ;
-; B2        ; MEIO_CLOCK ; 3.687 ; 3.687 ; Rise       ; MEIO_CLOCK      ;
-; C1        ; MEIO_CLOCK ; 4.395 ; 4.395 ; Rise       ; MEIO_CLOCK      ;
-; C2        ; MEIO_CLOCK ; 3.416 ; 3.416 ; Rise       ; MEIO_CLOCK      ;
-; D1        ; MEIO_CLOCK ; 4.333 ; 4.333 ; Rise       ; MEIO_CLOCK      ;
-; D2        ; MEIO_CLOCK ; 3.426 ; 3.426 ; Rise       ; MEIO_CLOCK      ;
-; E1        ; MEIO_CLOCK ; 4.377 ; 4.377 ; Rise       ; MEIO_CLOCK      ;
-; E2        ; MEIO_CLOCK ; 3.466 ; 3.466 ; Rise       ; MEIO_CLOCK      ;
-; F1        ; MEIO_CLOCK ; 4.073 ; 4.073 ; Rise       ; MEIO_CLOCK      ;
-; F2        ; MEIO_CLOCK ; 3.587 ; 3.587 ; Rise       ; MEIO_CLOCK      ;
-; G1        ; MEIO_CLOCK ; 3.955 ; 3.955 ; Rise       ; MEIO_CLOCK      ;
-; G2        ; MEIO_CLOCK ; 3.580 ; 3.580 ; Rise       ; MEIO_CLOCK      ;
-+-----------+------------+-------+-------+------------+-----------------+
-
-
-+---------------------------------------------------------------------+
-; Setup Transfers                                                     ;
-+------------+------------+----------+----------+----------+----------+
-; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+------------+------------+----------+----------+----------+----------+
-; MEIO_CLOCK ; CLOCK      ; 1        ; 1        ; 0        ; 0        ;
-; MEIO_CLOCK ; MEIO_CLOCK ; 914      ; 0        ; 0        ; 0        ;
-+------------+------------+----------+----------+----------+----------+
-Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
-
-
-+---------------------------------------------------------------------+
-; Hold Transfers                                                      ;
-+------------+------------+----------+----------+----------+----------+
-; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+------------+------------+----------+----------+----------+----------+
-; MEIO_CLOCK ; CLOCK      ; 1        ; 1        ; 0        ; 0        ;
-; MEIO_CLOCK ; MEIO_CLOCK ; 914      ; 0        ; 0        ; 0        ;
-+------------+------------+----------+----------+----------+----------+
-Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+-------------------
+; Clock Transfers ;
+-------------------
+Nothing to report.
 
 
 ---------------
@@ -1251,10 +194,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 14    ; 14   ;
-; Unconstrained Input Port Paths  ; 1453  ; 1453 ;
-; Unconstrained Output Ports      ; 14    ; 14   ;
-; Unconstrained Output Port Paths ; 14    ; 14   ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 0     ; 0    ;
+; Unconstrained Output Port Paths ; 0     ; 0    ;
 +---------------------------------+-------+------+
 
 
@@ -1264,7 +207,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Nov 08 16:26:07 2019
+    Info: Processing started: Fri Nov 22 20:31:35 2019
 Info: Command: quartus_sta final -c final
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1272,56 +215,34 @@ Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'final.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332105): Deriving Clocks
-    Info (332105): create_clock -period 1.000 -name MEIO_CLOCK MEIO_CLOCK
-    Info (332105): create_clock -period 1.000 -name CLOCK CLOCK
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Warning (332068): No clocks defined in design.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info (332159): No clocks to report
 Info: Analyzing Slow Model
-Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -3.327
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):    -3.327      -275.617 MEIO_CLOCK 
-    Info (332119):     3.626         0.000 CLOCK 
-Info (332146): Worst-case hold slack is -3.356
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):    -3.356        -3.356 CLOCK 
-    Info (332119):     0.516         0.000 MEIO_CLOCK 
+Info (332140): No fmax paths to report
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -1.380
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):    -1.380        -2.380 CLOCK 
-    Info (332119):    -0.500      -221.000 MEIO_CLOCK 
+Info (332140): No Minimum Pulse Width paths to report
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
-Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -1.021
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):    -1.021       -62.036 MEIO_CLOCK 
-    Info (332119):     2.217         0.000 CLOCK 
-Info (332146): Worst-case hold slack is -1.837
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):    -1.837        -1.837 CLOCK 
-    Info (332119):     0.236         0.000 MEIO_CLOCK 
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Warning (332068): No clocks defined in design.
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -1.380
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):    -1.380        -2.380 CLOCK 
-    Info (332119):    -0.500      -221.000 MEIO_CLOCK 
+Info (332140): No Minimum Pulse Width paths to report
 Info (332001): The selected device family is not supported by the report_metastability command.
-Info (332102): Design is not fully constrained for setup requirements
-Info (332102): Design is not fully constrained for hold requirements
+Info (332101): Design is fully constrained for setup requirements
+Info (332101): Design is fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4562 megabytes
-    Info: Processing ended: Fri Nov 08 16:26:08 2019
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 4558 megabytes
+    Info: Processing ended: Fri Nov 22 20:31:37 2019
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 
