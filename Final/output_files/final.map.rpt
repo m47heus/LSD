@@ -1,5 +1,5 @@
 Analysis & Synthesis report for final
-Fri Nov 22 18:30:00 2019
+Sat Nov 23 16:36:32 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -14,12 +14,11 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |final|ESTADO_ATUAL
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -45,15 +44,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Nov 22 18:30:00 2019           ;
+; Analysis & Synthesis Status        ; Successful - Sat Nov 23 16:36:32 2019           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; final                                           ;
 ; Top-level Entity Name              ; final                                           ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 0                                               ;
-;     Total combinational functions  ; 0                                               ;
-;     Dedicated logic registers      ; 0                                               ;
-; Total registers                    ; 0                                               ;
+; Total logic elements               ; 222                                             ;
+;     Total combinational functions  ; 222                                             ;
+;     Dedicated logic registers      ; 5                                               ;
+; Total registers                    ; 5                                               ;
 ; Total pins                         ; 29                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -167,29 +166,34 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-;                                             ;       ;
-; Total combinational functions               ; 0     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 29    ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-+---------------------------------------------+-------+
++----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                    ;
++---------------------------------------------+------------------+
+; Resource                                    ; Usage            ;
++---------------------------------------------+------------------+
+; Estimated Total logic elements              ; 222              ;
+;                                             ;                  ;
+; Total combinational functions               ; 222              ;
+; Logic element usage by number of LUT inputs ;                  ;
+;     -- 4 input functions                    ; 56               ;
+;     -- 3 input functions                    ; 158              ;
+;     -- <=2 input functions                  ; 8                ;
+;                                             ;                  ;
+; Logic elements by mode                      ;                  ;
+;     -- normal mode                          ; 201              ;
+;     -- arithmetic mode                      ; 21               ;
+;                                             ;                  ;
+; Total registers                             ; 5                ;
+;     -- Dedicated logic registers            ; 5                ;
+;     -- I/O registers                        ; 0                ;
+;                                             ;                  ;
+; I/O pins                                    ; 29               ;
+; Embedded Multiplier 9-bit elements          ; 0                ;
+; Maximum fan-out node                        ; ESTADO_ATUAL.OPC ;
+; Maximum fan-out                             ; 47               ;
+; Total fan-out                               ; 748              ;
+; Average fan-out                             ; 2.92             ;
++---------------------------------------------+------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -197,7 +201,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |final                     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 29   ; 0            ; |final              ; work         ;
+; |final                     ; 222 (222)         ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 29   ; 0            ; |final              ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -216,28 +220,114 @@ Encoding Type:  One-Hot
 +------------------+-----------------+------------------+------------------+-----------------+----------------+
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; ESTADO_ATUAL.FU                       ; Stuck at GND due to stuck port data_in ;
-; ESTADO_ATUAL.DI                       ; Lost fanout                            ;
-; ESTADO_ATUAL.OPD                      ; Lost fanout                            ;
-; ESTADO_ATUAL.OPC                      ; Lost fanout                            ;
-; ESTADO_ATUAL.S                        ; Lost fanout                            ;
-; Total Number of Removed Registers = 5 ;                                        ;
-+---------------------------------------+----------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                       ;
-+-----------------+---------------------------+---------------------------------------------------------------------+
-; Register name   ; Reason for Removal        ; Registers Removed due to This Register                              ;
-+-----------------+---------------------------+---------------------------------------------------------------------+
-; ESTADO_ATUAL.FU ; Stuck at GND              ; ESTADO_ATUAL.DI, ESTADO_ATUAL.OPD, ESTADO_ATUAL.OPC, ESTADO_ATUAL.S ;
-;                 ; due to stuck port data_in ;                                                                     ;
-+-----------------+---------------------------+---------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal ; Free of Timing Hazards ;
++------------------------------------------------------+---------------------+------------------------+
+; A1$latch                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; B1$latch                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; C1$latch                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; D1$latch                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; E1$latch                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; F1$latch                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; G1$latch                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; A2$latch                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; B2$latch                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; C2$latch                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; D2$latch                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; E2$latch                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; F2$latch                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; G2$latch                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DISPLAY_VECTOR1[0]                                   ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DISPLAY_VECTOR1[1]                                   ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DISPLAY_VECTOR1[2]                                   ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DISPLAY_VECTOR1[3]                                   ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DISPLAY_VECTOR1[4]                                   ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DISPLAY_VECTOR1[5]                                   ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DISPLAY_VECTOR1[6]                                   ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DISPLAY_VECTOR2[0]                                   ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DISPLAY_VECTOR2[1]                                   ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DISPLAY_VECTOR2[2]                                   ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DISPLAY_VECTOR2[3]                                   ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DISPLAY_VECTOR2[4]                                   ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DISPLAY_VECTOR2[5]                                   ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DISPLAY_VECTOR2[6]                                   ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DADO1[0]                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DADO1[1]                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DADO1[2]                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DADO1[3]                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DADO2[0]                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DADO2[1]                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DADO2[2]                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; DADO2[3]                                             ; ESTADO_ATUAL.OPC    ; yes                    ;
+; SALDO_CLIENTE[0]                                     ; SALDO_CLIENTE       ; yes                    ;
+; SALDO_CLIENTE[1]                                     ; SALDO_CLIENTE       ; yes                    ;
+; SALDO_CLIENTE[2]                                     ; SALDO_CLIENTE       ; yes                    ;
+; SALDO_CLIENTE[3]                                     ; SALDO_CLIENTE       ; yes                    ;
+; SALDO_CLIENTE[4]                                     ; SALDO_CLIENTE       ; yes                    ;
+; SALDO_CLIENTE[5]                                     ; SALDO_CLIENTE       ; yes                    ;
+; SALDO_CLIENTE[6]                                     ; SALDO_CLIENTE       ; yes                    ;
+; SALDO_CLIENTE[7]                                     ; SALDO_CLIENTE       ; yes                    ;
+; S2[0]                                                ; Selector50          ; yes                    ;
+; S3[0]                                                ; Selector41          ; yes                    ;
+; S1[0]                                                ; Selector59          ; yes                    ;
+; S6[0]                                                ; Selector14          ; yes                    ;
+; S5[0]                                                ; Selector23          ; yes                    ;
+; S4[0]                                                ; Selector32          ; yes                    ;
+; S7[0]                                                ; Selector5           ; yes                    ;
+; S2[1]                                                ; Selector50          ; yes                    ;
+; S3[1]                                                ; Selector41          ; yes                    ;
+; S1[1]                                                ; Selector59          ; yes                    ;
+; S5[1]                                                ; Selector23          ; yes                    ;
+; S6[1]                                                ; Selector14          ; yes                    ;
+; S4[1]                                                ; Selector32          ; yes                    ;
+; S7[1]                                                ; Selector5           ; yes                    ;
+; S2[2]                                                ; Selector50          ; yes                    ;
+; S3[2]                                                ; Selector41          ; yes                    ;
+; S1[2]                                                ; Selector59          ; yes                    ;
+; S6[2]                                                ; Selector14          ; yes                    ;
+; S5[2]                                                ; Selector23          ; yes                    ;
+; S4[2]                                                ; Selector32          ; yes                    ;
+; S7[2]                                                ; Selector5           ; yes                    ;
+; S2[3]                                                ; Selector50          ; yes                    ;
+; S3[3]                                                ; Selector41          ; yes                    ;
+; S1[3]                                                ; Selector59          ; yes                    ;
+; S6[3]                                                ; Selector14          ; yes                    ;
+; S5[3]                                                ; Selector23          ; yes                    ;
+; S4[3]                                                ; Selector32          ; yes                    ;
+; S7[3]                                                ; Selector5           ; yes                    ;
+; S2[4]                                                ; Selector50          ; yes                    ;
+; S3[4]                                                ; Selector41          ; yes                    ;
+; S1[4]                                                ; Selector59          ; yes                    ;
+; S6[4]                                                ; Selector14          ; yes                    ;
+; S5[4]                                                ; Selector23          ; yes                    ;
+; S4[4]                                                ; Selector32          ; yes                    ;
+; S7[4]                                                ; Selector5           ; yes                    ;
+; S2[5]                                                ; Selector50          ; yes                    ;
+; S3[5]                                                ; Selector41          ; yes                    ;
+; S1[5]                                                ; Selector59          ; yes                    ;
+; S5[5]                                                ; Selector23          ; yes                    ;
+; S6[5]                                                ; Selector14          ; yes                    ;
+; S4[5]                                                ; Selector32          ; yes                    ;
+; S7[5]                                                ; Selector5           ; yes                    ;
+; S2[6]                                                ; Selector50          ; yes                    ;
+; S3[6]                                                ; Selector41          ; yes                    ;
+; S1[6]                                                ; Selector59          ; yes                    ;
+; S6[6]                                                ; Selector14          ; yes                    ;
+; S5[6]                                                ; Selector23          ; yes                    ;
+; S4[6]                                                ; Selector32          ; yes                    ;
+; S7[6]                                                ; Selector5           ; yes                    ;
+; S2[7]                                                ; Selector50          ; yes                    ;
+; S3[7]                                                ; Selector41          ; yes                    ;
+; S1[7]                                                ; Selector59          ; yes                    ;
+; S5[7]                                                ; Selector23          ; yes                    ;
+; S6[7]                                                ; Selector14          ; yes                    ;
+; S4[7]                                                ; Selector32          ; yes                    ;
+; S7[7]                                                ; Selector5           ; yes                    ;
+; Number of user-specified and inferred latches = 116  ;                     ;                        ;
++------------------------------------------------------+---------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -245,12 +335,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 5     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 5     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 5     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -260,7 +350,7 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |final|Mux0                ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |final|Mux4                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -279,7 +369,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Nov 22 18:29:58 2019
+    Info: Processing started: Sat Nov 23 16:36:30 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off final -c final
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file final.vhd
@@ -288,7 +378,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file final.v
 Info (12127): Elaborating entity "final" for the top level hierarchy
 Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "SALDO_CLIENTE", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "RESULT_SUM", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "PROXIMO_ESTADO", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "RESULT_SUB", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "S1", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "S2", which holds its previous value in one or more paths through the process
@@ -299,7 +388,8 @@ Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latc
 Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "S7", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "DADO1", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "DADO2", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "DISPLAY_VECTOR", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "DISPLAY_VECTOR1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "DISPLAY_VECTOR2", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "A1", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "B1", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at final.vhd(46): inferring latch(es) for signal or variable "C1", which holds its previous value in one or more paths through the process
@@ -328,17 +418,28 @@ Info (10041): Inferred latch for "D1" at final.vhd(46)
 Info (10041): Inferred latch for "C1" at final.vhd(46)
 Info (10041): Inferred latch for "B1" at final.vhd(46)
 Info (10041): Inferred latch for "A1" at final.vhd(46)
-Info (10041): Inferred latch for "DISPLAY_VECTOR[0]" at final.vhd(46)
-Info (10041): Inferred latch for "DISPLAY_VECTOR[1]" at final.vhd(46)
-Info (10041): Inferred latch for "DISPLAY_VECTOR[2]" at final.vhd(46)
-Info (10041): Inferred latch for "DISPLAY_VECTOR[3]" at final.vhd(46)
-Info (10041): Inferred latch for "DISPLAY_VECTOR[4]" at final.vhd(46)
-Info (10041): Inferred latch for "DISPLAY_VECTOR[5]" at final.vhd(46)
-Info (10041): Inferred latch for "DISPLAY_VECTOR[6]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR2[0]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR2[1]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR2[2]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR2[3]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR2[4]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR2[5]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR2[6]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR1[0]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR1[1]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR1[2]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR1[3]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR1[4]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR1[5]" at final.vhd(46)
+Info (10041): Inferred latch for "DISPLAY_VECTOR1[6]" at final.vhd(46)
 Info (10041): Inferred latch for "DADO2[0]" at final.vhd(46)
 Info (10041): Inferred latch for "DADO2[1]" at final.vhd(46)
 Info (10041): Inferred latch for "DADO2[2]" at final.vhd(46)
 Info (10041): Inferred latch for "DADO2[3]" at final.vhd(46)
+Info (10041): Inferred latch for "DADO1[0]" at final.vhd(46)
+Info (10041): Inferred latch for "DADO1[1]" at final.vhd(46)
+Info (10041): Inferred latch for "DADO1[2]" at final.vhd(46)
+Info (10041): Inferred latch for "DADO1[3]" at final.vhd(46)
 Info (10041): Inferred latch for "S7[0]" at final.vhd(46)
 Info (10041): Inferred latch for "S7[1]" at final.vhd(46)
 Info (10041): Inferred latch for "S7[2]" at final.vhd(46)
@@ -403,11 +504,6 @@ Info (10041): Inferred latch for "RESULT_SUB[4]" at final.vhd(46)
 Info (10041): Inferred latch for "RESULT_SUB[5]" at final.vhd(46)
 Info (10041): Inferred latch for "RESULT_SUB[6]" at final.vhd(46)
 Info (10041): Inferred latch for "RESULT_SUB[7]" at final.vhd(46)
-Info (10041): Inferred latch for "PROXIMO_ESTADO.DI" at final.vhd(46)
-Info (10041): Inferred latch for "PROXIMO_ESTADO.OPC" at final.vhd(46)
-Info (10041): Inferred latch for "PROXIMO_ESTADO.OPD" at final.vhd(46)
-Info (10041): Inferred latch for "PROXIMO_ESTADO.FU" at final.vhd(46)
-Info (10041): Inferred latch for "PROXIMO_ESTADO.S" at final.vhd(46)
 Info (10041): Inferred latch for "RESULT_SUM[0]" at final.vhd(46)
 Info (10041): Inferred latch for "RESULT_SUM[1]" at final.vhd(46)
 Info (10041): Inferred latch for "RESULT_SUM[2]" at final.vhd(46)
@@ -424,79 +520,128 @@ Info (10041): Inferred latch for "SALDO_CLIENTE[4]" at final.vhd(46)
 Info (10041): Inferred latch for "SALDO_CLIENTE[5]" at final.vhd(46)
 Info (10041): Inferred latch for "SALDO_CLIENTE[6]" at final.vhd(46)
 Info (10041): Inferred latch for "SALDO_CLIENTE[7]" at final.vhd(46)
-Warning (14025): LATCH primitive "RESULT_SUM[3]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[3]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUM[2]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[2]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUM[1]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[1]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUM[0]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[0]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUM[7]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[7]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUM[6]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[6]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUM[5]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[5]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUM[4]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[4]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUM[3]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[3]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUM[2]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[2]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUM[1]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[1]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUM[0]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[0]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUM[7]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[7]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUM[6]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[6]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUM[5]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[5]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUM[4]" is permanently disabled
-Warning (14025): LATCH primitive "RESULT_SUB[4]" is permanently disabled
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "A1" is stuck at VCC
-    Warning (13410): Pin "B1" is stuck at GND
-    Warning (13410): Pin "C1" is stuck at GND
-    Warning (13410): Pin "D1" is stuck at GND
-    Warning (13410): Pin "E1" is stuck at GND
-    Warning (13410): Pin "F1" is stuck at GND
-    Warning (13410): Pin "G1" is stuck at GND
-    Warning (13410): Pin "A2" is stuck at VCC
-    Warning (13410): Pin "B2" is stuck at GND
-    Warning (13410): Pin "C2" is stuck at GND
-    Warning (13410): Pin "D2" is stuck at GND
-    Warning (13410): Pin "E2" is stuck at GND
-    Warning (13410): Pin "F2" is stuck at GND
-    Warning (13410): Pin "G2" is stuck at GND
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Warning (13012): Latch S2[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S3[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S1[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S6[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S5[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S4[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S7[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S2[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S3[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S1[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S5[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S6[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S4[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S7[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S2[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S3[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S1[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S6[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S5[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S4[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S7[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S2[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S3[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S1[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S6[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S5[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S4[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S7[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S2[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S3[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S1[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S6[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S5[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S4[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S7[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S2[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S3[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S1[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S5[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S6[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S4[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S7[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S2[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S3[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S1[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S6[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S5[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S4[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S7[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S2[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S3[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S1[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S5[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S6[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S4[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
+Warning (13012): Latch S7[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ESTADO_ATUAL.OPC
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 15 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "VALOR[7]"
-    Warning (15610): No output dependent on input pin "VALOR[6]"
-    Warning (15610): No output dependent on input pin "VALOR[5]"
-    Warning (15610): No output dependent on input pin "VALOR[4]"
-    Warning (15610): No output dependent on input pin "VALOR[3]"
-    Warning (15610): No output dependent on input pin "VALOR[2]"
-    Warning (15610): No output dependent on input pin "VALOR[1]"
-    Warning (15610): No output dependent on input pin "VALOR[0]"
-    Warning (15610): No output dependent on input pin "ENABLE"
-    Warning (15610): No output dependent on input pin "CLOCK"
-    Warning (15610): No output dependent on input pin "RESET"
-    Warning (15610): No output dependent on input pin "ID[1]"
-    Warning (15610): No output dependent on input pin "ID[2]"
-    Warning (15610): No output dependent on input pin "ID[0]"
-    Warning (15610): No output dependent on input pin "OP_CODE"
-Info (21057): Implemented 29 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 251 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 14 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 92 warnings
-    Info: Peak virtual memory: 4657 megabytes
-    Info: Processing ended: Fri Nov 22 18:30:00 2019
-    Info: Elapsed time: 00:00:02
+    Info (21061): Implemented 222 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 141 warnings
+    Info: Peak virtual memory: 4659 megabytes
+    Info: Processing ended: Sat Nov 23 16:36:33 2019
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 

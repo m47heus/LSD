@@ -2,4 +2,124 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow Model Setup 'ESTADO_ATUAL.DI'
+Slack : -5.604
+TNS   : -43.016
+
+Type  : Slow Model Setup 'OP_CODE'
+Slack : -2.642
+TNS   : -36.507
+
+Type  : Slow Model Setup 'ESTADO_ATUAL.OPC'
+Slack : -1.913
+TNS   : -67.972
+
+Type  : Slow Model Setup 'ID[0]'
+Slack : -1.140
+TNS   : -18.947
+
+Type  : Slow Model Setup 'CLOCK'
+Slack : -0.856
+TNS   : -1.977
+
+Type  : Slow Model Hold 'ID[0]'
+Slack : -4.326
+TNS   : -177.702
+
+Type  : Slow Model Hold 'ESTADO_ATUAL.OPC'
+Slack : -4.040
+TNS   : -161.446
+
+Type  : Slow Model Hold 'CLOCK'
+Slack : -2.537
+TNS   : -7.318
+
+Type  : Slow Model Hold 'OP_CODE'
+Slack : 0.601
+TNS   : 0.000
+
+Type  : Slow Model Hold 'ESTADO_ATUAL.DI'
+Slack : 0.832
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK'
+Slack : -1.380
+TNS   : -6.380
+
+Type  : Slow Model Minimum Pulse Width 'ID[0]'
+Slack : -1.380
+TNS   : -1.380
+
+Type  : Slow Model Minimum Pulse Width 'OP_CODE'
+Slack : -1.380
+TNS   : -1.380
+
+Type  : Slow Model Minimum Pulse Width 'ESTADO_ATUAL.DI'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'ESTADO_ATUAL.OPC'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'ESTADO_ATUAL.DI'
+Slack : -2.399
+TNS   : -18.111
+
+Type  : Fast Model Setup 'OP_CODE'
+Slack : -0.737
+TNS   : -6.926
+
+Type  : Fast Model Setup 'ESTADO_ATUAL.OPC'
+Slack : -0.623
+TNS   : -7.771
+
+Type  : Fast Model Setup 'ID[0]'
+Slack : -0.154
+TNS   : -0.486
+
+Type  : Fast Model Setup 'CLOCK'
+Slack : 0.267
+TNS   : 0.000
+
+Type  : Fast Model Hold 'ID[0]'
+Slack : -2.496
+TNS   : -107.857
+
+Type  : Fast Model Hold 'ESTADO_ATUAL.OPC'
+Slack : -2.251
+TNS   : -92.181
+
+Type  : Fast Model Hold 'CLOCK'
+Slack : -1.581
+TNS   : -4.938
+
+Type  : Fast Model Hold 'OP_CODE'
+Slack : 0.140
+TNS   : 0.000
+
+Type  : Fast Model Hold 'ESTADO_ATUAL.DI'
+Slack : 0.169
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK'
+Slack : -1.380
+TNS   : -6.380
+
+Type  : Fast Model Minimum Pulse Width 'ID[0]'
+Slack : -1.380
+TNS   : -1.380
+
+Type  : Fast Model Minimum Pulse Width 'OP_CODE'
+Slack : -1.380
+TNS   : -1.380
+
+Type  : Fast Model Minimum Pulse Width 'ESTADO_ATUAL.DI'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'ESTADO_ATUAL.OPC'
+Slack : 0.500
+TNS   : 0.000
+
 ------------------------------------------------------------
