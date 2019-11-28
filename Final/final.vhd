@@ -110,6 +110,8 @@ banco: PROCESS (ESTADO_ATUAL, SALDO_CLIENTE, OP_CODE, PROXIMO_ESTADO, ID, S1, S2
 						ELSE
 							PROXIMO_ESTADO <= OPC;
 						END IF;
+						
+				WHEN DI=>
                DADO1 <= SALDO_CLIENTE(3 downto 0);
                DADO2 <= SALDO_CLIENTE(7 downto 4);
                case DADO1 is
@@ -166,6 +168,7 @@ banco: PROCESS (ESTADO_ATUAL, SALDO_CLIENTE, OP_CODE, PROXIMO_ESTADO, ID, S1, S2
 					E2 <= DISPLAY_VECTOR2(4);
 					F2 <= DISPLAY_VECTOR2(5);
 					G2 <= DISPLAY_VECTOR2(6);
+					PROXIMO_ESTADO <= S;
 				WHEN OTHERS => PROXIMO_ESTADO <= S;
         END CASE;
 
