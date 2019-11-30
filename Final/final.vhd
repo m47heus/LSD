@@ -10,8 +10,8 @@ port (
 			ENABLE						: in std_logic;
 			CLOCK						: in std_logic;
 			RESET						: in std_logic;
-			A1, B1, C1, D1, E1, F1, G1	: out std_logic := '0';
-			A2, B2, C2, D2, E2, F2, G2	: out std_logic := '0'
+			A1, B1, C1, D1, E1, F1, G1	: out std_logic;
+			A2, B2, C2, D2, E2, F2, G2	: out std_logic
     );
 end final;
 
